@@ -20,12 +20,25 @@ namespace Camping
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                       "~/js/jquery.min.js",
+                       "~/js/modernizr.custom.js",
+                       "~/js/menu_jquery.js",
+                       "~/js/jquery.marquee.min.js",
+                       "~/js/jquery.flexisel.js",
+                       "~/js/jquery.flexslider.js",
+                       "~/js/easyResponsiveTabs.js",
+                       "~/js/jquery-ui.js",
+                       "~/js/script.js",
+                       "~/js/JFCore.js",
+                       "~/js/JFForms.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/css/bootstrap.css",
+                      "~/css/style.css",
+                      "~/css/flexslider.css",
+                      "~/css/JFFormStyle-1.css",
+                      "~/css/jquery-ui.css",
+                      "~/js/jquery-ui.css"));
         }
     }
 }
