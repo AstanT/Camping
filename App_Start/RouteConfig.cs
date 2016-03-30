@@ -14,6 +14,13 @@ namespace Camping
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "AfterRegistration",
+                url: "Account/EndRegistration",
+                defaults: new {controller = "Account", action = "EndRegistration"}
+                );
+
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

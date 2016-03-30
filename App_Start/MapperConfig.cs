@@ -8,6 +8,7 @@ namespace Camping.App_Start
     {
         public static void RegisterMapping()
         {
+            Mapper.CreateMap<User, RegisterViewModel>();
             Mapper.CreateMap<RegisterViewModel, User>().AfterMap((p, m) =>
             {
                 m.firstName = p.FirstName;

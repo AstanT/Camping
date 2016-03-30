@@ -31,33 +31,44 @@ namespace Camping.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Registration(RegisterViewModel model)
         {
-                //var mapper = _mapper.Map()
+            //var mapper = _mapper.Map()
 
-                var entity = Mapper.Map<RegisterViewModel, User>(model);
-                var user = _userManager.GetUserByEmail(model.Email);
-                if (user != null) throw new Exception("лваолв");
+            var entity = Mapper.Map<RegisterViewModel, User>(model);
+            var user = _userManager.GetUserByEmail(model.Email);
+            if (user != null) throw new Exception("лваолв");
 
-                var salt = PasswordHashing.GenerateSaltValue();
-                var pass = PasswordHashing.HashPassword(entity.password, salt);
-                entity.passwordSalt = salt;
-                entity.password = pass;
-                _userManager.Add(entity);
-                
-                entity.roles = new List<UserInRoles>() { new UserInRoles() { id_roles = 2, id_user = entity.id } };
-                _userManager.Update(entity);
+            var rand = new Random();
+            entity.activateCode = Convert.ToString(rand.Next(100000, 999999));
 
-                var url = Url.Action("ConfirmEmail", "Account", new { token = entity.id, email = entity.email },
-                    Request.Url.Scheme);
-                _userManager.SentConfirmMail(entity, url);
+            var salt = PasswordHashing.GenerateSaltValue();
+            var pass = PasswordHashing.HashPassword(entity.password, salt);
+            entity.passwordSalt = salt;
+            entity.password = pass;
+            _userManager.Add(entity);
+
+            entity.roles = new List<UserInRoles>() {new UserInRoles() {id_roles = 2, id_user = entity.id}};
+            _userManager.Update(entity);
+
+            var url = Url.Action("ConfirmEmail", "Account", new {token = entity.id, email = entity.email},
+                Request.Url.Scheme);
+            _userManager.SentConfirmMail(entity, url);
 
 
-                return RedirectToRoute("AfterRegistration");
-
-            
-          
-
+            return RedirectToRoute("AfterRegistration");
 
 
         }
+
+        [AllowAnonymous]
+        public ActionResult EndRegistration()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        public ActionResult ConfirmEmail()
+        {
+            return View();
+        }
     }
-    }
+}
