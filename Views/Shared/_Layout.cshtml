@@ -37,16 +37,29 @@
 
                     </script>
                 </div>
-                <div class="dropdown-grids">
-                    <div id="loginContainer">
-                        <a href="Login.html"><span>Login</span></a>
+                @if (!HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+                    <div class="dropdown-grids">
+                        <div id="loginContainer">
+                            <a href="/Account/LogIn"><span>@Resource.LogIn</span></a>
+                        </div>
                     </div>
-                </div>
-                <div class="dropdown-grids">
-                    <div id="loginContainer">
-                        <a href="/Account/Registration"><span>@Resource.Registration</span></a>
+                    <div class="dropdown-grids">
+                        <div id="loginContainer">
+                            <a href="/Account/Registration"><span>@Resource.Registration</span></a>
+                        </div>
                     </div>
-                </div>
+                }
+                else
+                {
+                    <div class="dropdown-grids">
+                        <div id="loginContainer">
+                            <a href="/Account/LogOff"><span>@Resource.LogOff</span></a>
+                        </div>
+                    </div>
+                }
+
+
             </div>
             <div class="clearfix"> </div>
         </div>

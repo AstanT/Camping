@@ -117,13 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="EmailNotRegistered" xml:space="preserve">
+    <value>Этот электронный адрес не зарегистрирован</value>
+  </data>
   <data name="FieldCannotBeEmpty" xml:space="preserve">
     <value>Поле не должно быть пустым</value>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>The password is no more than 20 characters</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="NotActived" xml:space="preserve">
+    <value>Электронный адрес не подтверждён</value>
+  </data>
+  <data name="PassMismatch" xml:space="preserve">
+    <value>Passwords do not match</value>
+  </data>
+  <data name="PasswordLenght" xml:space="preserve">
+    <value>The password is at least 6 and no more than 20 characters</value>
   </data>
   <data name="Registration" xml:space="preserve">
     <value>Регистрация</value>
   </data>
   <data name="WrongFormatEmail" xml:space="preserve">
     <value>Неверный формат почты</value>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>Неверный пароль</value>
   </data>
 </root>

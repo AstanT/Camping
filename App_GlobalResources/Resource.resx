@@ -117,11 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="EmailNotRegistered" xml:space="preserve">
+    <value>This Email is not registered</value>
+  </data>
   <data name="FieldCannotBeEmpty" xml:space="preserve">
     <value>Field Cannot Be Empty</value>
   </data>
   <data name="Length" xml:space="preserve">
     <value>The password is no more than 20 characters</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>LogIn</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>LogOff</value>
+  </data>
+  <data name="NotActived" xml:space="preserve">
+    <value>Email is not confirmed</value>
   </data>
   <data name="PassMismatch" xml:space="preserve">
     <value>Passwords do not match</value>
@@ -134,5 +146,8 @@
   </data>
   <data name="WrongFormatEmail" xml:space="preserve">
     <value>Wrong Format Email</value>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>Wrong Password</value>
   </data>
 </root>

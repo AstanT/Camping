@@ -61,6 +61,15 @@ namespace Camping.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This Email is not registered.
+        /// </summary>
+        public static string EmailNotRegistered {
+            get {
+                return ResourceManager.GetString("EmailNotRegistered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Field Cannot Be Empty.
         /// </summary>
         public static string FieldCannotBeEmpty {
@@ -75,6 +84,33 @@ namespace Camping.App_GlobalResources {
         public static string Length {
             get {
                 return ResourceManager.GetString("Length", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LogIn.
+        /// </summary>
+        public static string LogIn {
+            get {
+                return ResourceManager.GetString("LogIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LogOff.
+        /// </summary>
+        public static string LogOff {
+            get {
+                return ResourceManager.GetString("LogOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email is not confirmed.
+        /// </summary>
+        public static string NotActived {
+            get {
+                return ResourceManager.GetString("NotActived", resourceCulture);
             }
         }
         
@@ -111,6 +147,15 @@ namespace Camping.App_GlobalResources {
         public static string WrongFormatEmail {
             get {
                 return ResourceManager.GetString("WrongFormatEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wrong Password.
+        /// </summary>
+        public static string WrongPassword {
+            get {
+                return ResourceManager.GetString("WrongPassword", resourceCulture);
             }
         }
     }
