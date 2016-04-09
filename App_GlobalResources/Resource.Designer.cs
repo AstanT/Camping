@@ -106,6 +106,15 @@ namespace Camping.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MyPage.
+        /// </summary>
+        public static string MyPage {
+            get {
+                return ResourceManager.GetString("MyPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email is not confirmed.
         /// </summary>
         public static string NotActived {

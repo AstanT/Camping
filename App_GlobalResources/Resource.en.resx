@@ -132,6 +132,9 @@
   <data name="LogOff" xml:space="preserve">
     <value>LogOff</value>
   </data>
+  <data name="MyPage" xml:space="preserve">
+    <value>MyPage</value>
+  </data>
   <data name="NotActived" xml:space="preserve">
     <value>Email is not confirmed</value>
   </data>

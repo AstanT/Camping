@@ -132,6 +132,9 @@
   <data name="LogOff" xml:space="preserve">
     <value>Выйти</value>
   </data>
+  <data name="MyPage" xml:space="preserve">
+    <value>Моя страница</value>
+  </data>
   <data name="NotActived" xml:space="preserve">
     <value>Электронный адрес не подтверждён</value>
   </data>

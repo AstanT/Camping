@@ -98,8 +98,8 @@ namespace Camping.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogIn(LoginViewModel model)
         {
-            /*try
-            {*/
+            try
+            {
                 var user = _userManager.GetUserByEmail(model.EmailLogin);
                 if(user == null) throw new Exception(Resource.EmailNotRegistered);
                 var passLogin = PasswordHashing.HashPassword(model.PasswordLogin, user.passwordSalt);
@@ -107,12 +107,12 @@ namespace Camping.Controllers
                 if(!user.isActivated) throw new Exception(Resource.NotActived);
                 FormsAuthentication.SetAuthCookie(user.email, false);
                 return RedirectToAction("UserPage", "Profile", user.id);
-            /*}
+            }
             catch (Exception e)
             {
                 model.Error = e.Message;
                 return View(model);
-            }*/
+            }
         }
 
         public ActionResult LogOff()
