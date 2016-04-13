@@ -45,7 +45,7 @@ namespace Camping.Controllers
             return View(model);
         }
 
-        [HttpPost]
+        /*[HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult EditProfile(EditProfileViewModel model, HttpPostedFileBase upload)
@@ -55,8 +55,8 @@ namespace Camping.Controllers
                 var user = _userManager.GetById(model.Id);
                 if (upload != null && upload.ContentLength > 0)
                 {
-                    var pic = new AddPhotos();
-                    pathPic = pic.AddImage(upload, Server.MapPath("~/Images/Account/"), "~/Images/Account/");
+                    //var pic = new AddPhotos();
+                    //pathPic = pic.AddImage(upload, Server.MapPath("~/Images/Account/"), "~/Images/Account/");
                 }
             }
             catch (Exception)
@@ -64,7 +64,7 @@ namespace Camping.Controllers
                 
                 throw;
             }
-        }
+        }*/
 
 
     }
