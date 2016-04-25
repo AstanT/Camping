@@ -38,6 +38,21 @@ namespace Camping.Controllers
             var user = _userManager.GetById((long)id);
             model = Mapper.Map<User,UserPageViewModel>(user);
 
+            int coutOrder = 0;
+            List<OrderViewModel> orders = new List<OrderViewModel>();
+            IQueryable<Order> ordersList;
+
+            ordersList = _orderManager.GetOrdersByUserId(user.id).OrderByDescending(x => x.dateOrder);
+
+            foreach (var order in ordersList)
+            {               
+                orders.Add(Mapper.Map<Order, OrderViewModel>(order));
+                if (coutOrder == 2) break;
+                coutOrder++;
+
+            }
+            model.LastUserOrders = orders;
+
             return View(model);
         }
 
