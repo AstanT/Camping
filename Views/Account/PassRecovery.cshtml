@@ -1,7 +1,7 @@
 ﻿@using Camping.App_GlobalResources
-@model Camping.ViewModels.LoginViewModel
+@model Camping.ViewModels.PassRecoveryViewModel
 @{
-    ViewBag.Title = Resource.LogIn;
+    ViewBag.Title = "PassRecovery";
 }
 
 <div>
@@ -13,26 +13,18 @@
                 <div class="book-grids">
                     <div class="col-md-6 book-left">
                         <div class="book-left-info">
-                            <h3>Create Your Govihar Account</h3>
+                            <h3>@Resource.Recovery</h3>
                         </div>
                         <div class="book-left-form">
-                            @using (Html.BeginForm("LogIn", "Account", null, FormMethod.Post, new {enctype = "multipart/form-data"}))
+                            @using (Html.BeginForm("PassRecovery", "Account", null, FormMethod.Post, new {enctype = "multipart/form-data"}))
                             {
                                 @Html.AntiForgeryToken()
                                 <p>Email Address</p>
-                                @Html.EditorFor(model => model.EmailLogin, new {htmlAttributes = new {@value = ""}})
-                                <p>@Html.ValidationMessageFor(model => model.EmailLogin, "", new {@class = ""})</p>
-                                <p>Password</p>
-                                @Html.EditorFor(model => model.PasswordLogin, new {htmlAttributes = new {@value = ""}})
-                                <p>@Html.ValidationMessageFor(model => model.PasswordLogin, "", new {@class = ""})</p>
+                                @Html.EditorFor(model => model.Email, new {htmlAttributes = new {@value = ""}})
+                                <p>@Html.ValidationMessageFor(model => model.Email, "", new {@class = ""})</p>
 
-                                <input type="submit" id="login" value="@Resource.LogIn">
+                                <input type="submit" id="login" value="@Resource.Send">
                             }
-                        </div>
-                        <div class="book-left-info">
-                            <h4>
-                                @Html.ActionLink(Resource.ForgotPassword,"PassRecovery","Account")
-                            </h4>
                         </div>
                     </div>
                     <div class="col-md-6 book-left book-right">
@@ -63,7 +55,4 @@
     </div>
     <!-- //banner-bottom -->
 </div>
-
-
-
 

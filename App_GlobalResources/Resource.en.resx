@@ -123,6 +123,9 @@
   <data name="FieldCannotBeEmpty" xml:space="preserve">
     <value>Field Cannot Be Empty</value>
   </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
   <data name="Length" xml:space="preserve">
     <value>The password is no more than 20 characters</value>
   </data>
@@ -144,8 +147,14 @@
   <data name="PasswordLenght" xml:space="preserve">
     <value>The password is at least 6 and no more than 20 characters</value>
   </data>
+  <data name="Recovery" xml:space="preserve">
+    <value>Password recovery</value>
+  </data>
   <data name="Registration" xml:space="preserve">
     <value>Registration</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
   </data>
   <data name="WrongFormatEmail" xml:space="preserve">
     <value>Wrong Format Email</value>

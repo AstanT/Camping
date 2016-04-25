@@ -79,6 +79,15 @@ namespace Camping.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Forgot your password?.
+        /// </summary>
+        public static string ForgotPassword {
+            get {
+                return ResourceManager.GetString("ForgotPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The password is no more than 20 characters.
         /// </summary>
         public static string Length {
@@ -142,11 +151,29 @@ namespace Camping.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Password recovery.
+        /// </summary>
+        public static string Recovery {
+            get {
+                return ResourceManager.GetString("Recovery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Registration.
         /// </summary>
         public static string Registration {
             get {
                 return ResourceManager.GetString("Registration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send.
+        /// </summary>
+        public static string Send {
+            get {
+                return ResourceManager.GetString("Send", resourceCulture);
             }
         }
         

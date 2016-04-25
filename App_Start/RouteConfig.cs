@@ -16,6 +16,18 @@ namespace Camping
                 );
 
             routes.MapRoute(
+                name: "ConfirmEmail",
+                url: "Account/ConfirmEmail",
+                defaults: new {controller = "Account", action = "ConfirmEmail"}
+                );
+            routes.MapRoute(
+                name: "EndPassRecovery",
+                url: "Account/EndPassRecovery",
+                defaults: new {controller = "Account", action = "EndPassRecovery" }
+                );
+
+
+            routes.MapRoute(
             name: "UserPage",
             url: "Profile/UserPage/{id}",
             defaults: new { controller = "Profile", action = "UserPage", id = UrlParameter.Optional }

@@ -121,8 +121,43 @@ namespace Camping.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [AllowAnonymous]
+        public ActionResult PassRecovery()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult PassRecovery(PassRecoveryViewModel model)
+        {
+            try
+            {
+                var user = _userManager.GetUserByEmail(model.Email);
+                if(user == null) throw new Exception(Resource.EmailNotRegistered);
+                var rand = new Random();
+                var newPass = Convert.ToString(rand.Next(100000, 999999));
+                var salt = PasswordHashing.GenerateSaltValue();
+                var pass = PasswordHashing.HashPassword(newPass, salt);
+                user.passwordSalt = salt;
+                user.password = pass;
+                _userManager.Update(user);
+                _userManager.SendPassRecovery(user,newPass);
+                return RedirectToRoute("EndPassRecovery");
+            }
+            catch (Exception e)
+            {
+                model.Error = e.Message;
+                return View(model);
+            }
+        }
 
+        [AllowAnonymous]
+        public ActionResult EndPassRecovery()
+        {
+            return View();
+        }
 
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
@@ -13,23 +15,26 @@ namespace Camping.Controllers
     public class ProfileController : Controller
     {
         private readonly IUserManager<User> _userManager;
+        private readonly IOrderManager<Order> _orderManager; 
 
-        public ProfileController(IUserManager<User> userManager)
+        public ProfileController(IUserManager<User> userManager, IOrderManager<Order> orderManager)
         {
             _userManager = userManager;
+            _orderManager = orderManager;
         }
         
         public ActionResult UserPage(long? id)
         {
-            if (id == null) return UserPage(new UserPageViewModel(), id);
+            if (id != null) return UserPage(new UserPageViewModel(), id);
             var user = _userManager.GetUserByEmail(User.Identity.Name);
             Session["UserId"] = user.id;
-            return UserPage(new UserPageViewModel(), id);
+            return UserPage(new UserPageViewModel(), user.id);
         }
 
         [HttpPost]
         public ActionResult UserPage(UserPageViewModel model, long? id)
         {
+            if (!ModelState.IsValid) return View();
             var user = _userManager.GetById((long)id);
             model = Mapper.Map<User,UserPageViewModel>(user);
 
@@ -66,6 +71,27 @@ namespace Camping.Controllers
             }
         }*/
 
+        [AllowAnonymous]
+        public ActionResult UserOrders(UserOrdersPageViewModel model, long id)
+        {
+            try
+            {
+                List<OrderViewModel> orders = new List<OrderViewModel>();
+                IQueryable<Order> ordersList;
 
+                ordersList = _orderManager.GetOrdersByUserId(id).OrderByDescending(x => x.dateOrder);
+
+                foreach (var order in ordersList)
+                {
+                    orders.Add(Mapper.Map<Order,OrderViewModel>(order));
+                }
+                model.UserOrders = orders;
+                return View(model);
+            }
+            catch (Exception)
+            {
+                return View();
+            }
+        }
     }
 }

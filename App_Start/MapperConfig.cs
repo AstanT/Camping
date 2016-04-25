@@ -23,6 +23,7 @@ namespace Camping.App_Start
                 m.Name = p.firstName + " " + p.lastName;
                 m.Phone = p.phoneNumber;
                 m.Photo = p.photo;
+                m.Email = p.email;
             });
 
             Mapper.CreateMap<User, EditProfileViewModel>().AfterMap((p, m) =>
@@ -32,6 +33,35 @@ namespace Camping.App_Start
                 m.LastName = p.lastName;
                 m.PhoneNomber = p.phoneNumber;
                 m.Email = p.email;
+            });
+
+            Mapper.CreateMap<Services, ServicePageViewModel>().AfterMap((p, m) =>
+            {
+                m.Id = p.id;
+                m.ClientMax = p.clientMax;
+                m.Description = p.description;
+                m.Name = p.name;
+                m.Price = p.price;
+                m.Rating = p.rating;
+                m.Type = p.type;
+                m.IsActive = p.isActive;
+                m.Prepaymant = p.prepaymant;
+            });
+
+            Mapper.CreateMap<Order, OrderViewModel>().AfterMap((p, m) =>
+            {
+                m.Id = p.id;
+                m.Name = p.services.name;
+                m.DateStart = p.dateStart;
+                m.DateEnd = p.dateEnd;
+                m.DateOrder = p.dateOrder;
+                m.IsActive = p.isActive;
+            });
+
+            Mapper.CreateMap<ServicePhoto, PhotoViewModel>().AfterMap((p, m) =>
+            {
+                m.Name = p.photo.name;
+                m.Date = p.photo.date;
             });
         }
     }
