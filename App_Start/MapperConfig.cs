@@ -35,6 +35,14 @@ namespace Camping.App_Start
                 m.Email = p.email;
             });
 
+            Mapper.CreateMap<EditProfileViewModel, User>().AfterMap((p, m) =>
+            {
+                m.firstName = p.FirstName;
+                m.lastName = p.LastName;
+                m.email = p.Email;
+                m.phoneNumber = p.PhoneNomber;
+            });
+
             Mapper.CreateMap<Services, ServicePageViewModel>().AfterMap((p, m) =>
             {
                 m.Id = p.id;
@@ -62,6 +70,15 @@ namespace Camping.App_Start
             {
                 m.Name = p.photo.name;
                 m.Date = p.photo.date;
+            });
+
+            Mapper.CreateMap<Services, ServicesViewModel>().AfterMap((p, m) =>
+            {
+                m.Type = p.type;
+                m.Name = p.name;
+                m.Prise = p.price;
+                m.Rating = p.rating;
+                m.IsActive = p.isActive;
             });
         }
     }

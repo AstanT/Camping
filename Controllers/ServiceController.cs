@@ -46,8 +46,33 @@ namespace Camping.Controllers
             catch (Exception)
             {
                 return View(model);
+            }            
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public ActionResult House(HouseViewModel model)
+        {
+            List<ServicesViewModel> services = new List<ServicesViewModel>();
+            List<PhotoViewModel> photos = new List<PhotoViewModel>();
+            IQueryable<Services> houses;
+
+            houses = _servicesManager.GetHouse("House").OrderByDescending(x => x.rating);
+
+            foreach (var house in houses)
+            {
+                var photosHouse = _servicePhotoManager.GetServicePhotosByServiceId(house.id);
+                photos.Clear();
+                foreach (var photo in photosHouse)
+                {
+                    photos.Add(Mapper.Map<ServicePhoto, PhotoViewModel>(photo));
+                }
+                var home = Mapper.Map<Services, ServicesViewModel>(house);
+                home.Photo = photos[0].Name;
+                services.Add(home);
             }
-            
+            model.SeervicesList = services;
+            return View(model);
         }
     }
 }

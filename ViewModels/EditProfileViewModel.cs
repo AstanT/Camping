@@ -1,8 +1,10 @@
-﻿using Camping.Validators;
+﻿using Camping.Filters;
+using Camping.Validators;
 using FluentValidation.Attributes;
 
 namespace Camping.ViewModels
 {
+    [Culture]
     [Validator(typeof(EditProfileViewModelValidator))]
     public class EditProfileViewModel
     {

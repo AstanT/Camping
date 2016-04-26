@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EditPassword" xml:space="preserve">
+    <value>Edit Password</value>
+  </data>
+  <data name="EditProfile" xml:space="preserve">
+    <value>Edit Profile</value>
+  </data>
   <data name="EmailNotRegistered" xml:space="preserve">
     <value>This Email is not registered</value>
   </data>
@@ -138,14 +150,23 @@
   <data name="MyPage" xml:space="preserve">
     <value>MyPage</value>
   </data>
+  <data name="NewPasswor" xml:space="preserve">
+    <value>New Password</value>
+  </data>
   <data name="NotActived" xml:space="preserve">
     <value>Email is not confirmed</value>
   </data>
   <data name="PassMismatch" xml:space="preserve">
     <value>Passwords do not match</value>
   </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
   <data name="PasswordLenght" xml:space="preserve">
     <value>The password is at least 6 and no more than 20 characters</value>
+  </data>
+  <data name="Photo" xml:space="preserve">
+    <value>Photo</value>
   </data>
   <data name="Recovery" xml:space="preserve">
     <value>Password recovery</value>

@@ -191,10 +191,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\EditPasswordViewModelValidator.cs" />
     <Compile Include="Validators\EditProfileViewModelValidator.cs" />
     <Compile Include="Validators\LoginViewModelValidator.cs" />
     <Compile Include="Validators\PassRecoveryViewModelValidator.cs" />
     <Compile Include="Validators\RegisterViewModelValidator.cs" />
+    <Compile Include="ViewModels\EditPasswordViewModel.cs" />
     <Compile Include="ViewModels\EditProfileViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\OrderViewModel.cs" />
@@ -202,6 +204,7 @@
     <Compile Include="ViewModels\PhotoViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\ServicePageViewModel.cs" />
+    <Compile Include="ViewModels\HouseViewModel.cs" />
     <Compile Include="ViewModels\ServicesViewModel.cs" />
     <Compile Include="ViewModels\UserOrdersPageViewModel.cs" />
     <Compile Include="ViewModels\UserPageViewModel.cs" />
@@ -282,6 +285,8 @@
     <Content Include="Views\Account\PassRecovery.cshtml" />
     <Content Include="Views\Account\EndPassRecovery.cshtml" />
     <Content Include="Views\Profile\UserOrders.cshtml" />
+    <Content Include="Views\Profile\EditPassword.cshtml" />
+    <Content Include="Views\Service\House.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

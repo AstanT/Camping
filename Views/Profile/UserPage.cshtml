@@ -1,11 +1,19 @@
-﻿@model Camping.ViewModels.UserPageViewModel
+﻿@using Camping.App_GlobalResources
+@model Camping.ViewModels.UserPageViewModel
+@{ long userInSystem = Convert.ToInt64(Session["UserId"]); }
 
 @{
-    ViewBag.Title = "UserPage";
+    ViewBag.Title = Model.Name;
 }
 <div>
     @Model.Name
 </div>
 @Html.ActionLink("ServicePage", "ServicePage", "Service", new { id = 1 }, null)
 
+@if (HttpContext.Current.User.Identity.IsAuthenticated && Model.IdUserPage == userInSystem)
+{
+    @Html.ActionLink(@Resource.EditProfile, "EditProfile", new { id = Model.IdUserPage }, null)
+    @Html.ActionLink(@Resource.EditPassword, "EditPassword", new { id = Model.IdUserPage }, null)
+}
 
+@Html.ActionLink("House", "House", "Service")

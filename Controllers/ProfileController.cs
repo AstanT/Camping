@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
+using Camping.App_GlobalResources;
+using Camping.BL;
 using Camping.Core;
 using Camping.Filters;
 using Camping.Interfaces.Manager;
@@ -65,7 +67,7 @@ namespace Camping.Controllers
             return View(model);
         }
 
-        /*[HttpPost]
+        [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult EditProfile(EditProfileViewModel model, HttpPostedFileBase upload)
@@ -73,18 +75,59 @@ namespace Camping.Controllers
             try
             {
                 var user = _userManager.GetById(model.Id);
+
+                string pathPic = user.photo;
+
                 if (upload != null && upload.ContentLength > 0)
                 {
-                    //var pic = new AddPhotos();
-                    //pathPic = pic.AddImage(upload, Server.MapPath("~/Images/Account/"), "~/Images/Account/");
+                    var pic = new AddPhotos();
+                    pathPic = pic.AddImage(upload, Server.MapPath("~/images/Account/"), "~/images/Account/");
                 }
+
+                user = Mapper.Map<EditProfileViewModel, User>(model, user);
+                user.photo = pathPic;
+                _userManager.Update(user);
+
+                return RedirectToRoute("UserPage");
             }
             catch (Exception)
             {
-                
-                throw;
+                return View();
             }
-        }*/
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public ActionResult EditPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditPassword(EditPasswordViewModel model,long id)
+        {
+            try
+            {
+                if (!ModelState.IsValid) return View(model);
+                var user = _userManager.GetById(id);
+                if (user.password != PasswordHashing.HashPassword
+                    (model.Password, user.passwordSalt))
+                    throw new Exception(Resource.WrongPassword);
+
+                var newSalt = PasswordHashing.GenerateSaltValue();
+                user.passwordSalt = newSalt;
+                user.password = PasswordHashing.HashPassword(model.NewPassword, newSalt);
+                _userManager.Update(user);
+                return RedirectToRoute("UserPage");
+            }
+            catch (Exception e)
+            {
+                model.Error = e.Message;
+                return View(model);
+            }
+        }
 
         [AllowAnonymous]
         public ActionResult UserOrders(UserOrdersPageViewModel model, long id)
