@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using Camping.Core;
 using Camping.ViewModels;
 
@@ -79,6 +80,25 @@ namespace Camping.App_Start
                 m.Prise = p.price;
                 m.Rating = p.rating;
                 m.IsActive = p.isActive;
+            });
+
+            Mapper.CreateMap<Comments, CommentViewModel>().AfterMap((p, m) =>
+            {
+                m.Id = p.id;
+                m.IdUser = p.id_user;
+                m.IdService = p.id_service;
+                m.UserName = p.user.firstName + " " + p.user.lastName;
+                m.Description = p.commentText;
+                m.PhotoUser = p.user.photo;
+                m.Date = p.dateOfComment;
+            });
+
+            Mapper.CreateMap<ServicePageViewModel, Comments>().AfterMap((p, m) =>
+            {
+                m.id_service = p.Id;
+                m.id_user = p.IdUserInSystem;
+                m.commentText = p.NewComment;
+                m.dateOfComment = DateTime.Now;
             });
         }
     }

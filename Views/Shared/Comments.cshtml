@@ -1,0 +1,33 @@
+﻿@using Camping.App_GlobalResources
+@model List<Camping.ViewModels.CommentViewModel>
+@{ long userInSystem = Convert.ToInt64(Session["UserId"]);}
+
+<div class="response">
+    <h3>@Resource.Comments</h3>
+    
+    @foreach (var comment in Model)
+    {
+        <div class="media response-info">
+
+            <div class="media-left response-text-left">
+                <a href="@Url.Action("UserPage", "Profile", new {id = comment.IdUser})">
+                    <img class="media-object" src="@comment.PhotoUser" alt="">
+                </a>
+                <h5><a href="@Url.Action("UserPage", "Profile", new {id = comment.IdUser})">@comment.UserName</a></h5>
+            </div>
+            <div class="media-body response-text-right">
+                <p>@comment.Description</p>
+                <ul>
+                    <li style="visibility: visible; color: #000">@comment.Date</li>
+                    @if ((HttpContext.Current.User.Identity.IsAuthenticated && comment.IdService == userInSystem) || userInSystem == 1)
+                    {
+                        <li>
+                            @Html.ActionLink(@Resource.Delete,"DeleteComment","Service", new { id = comment.Id}, new {@style = "font-size: 14px"})
+                        </li>
+                    }                   
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    }
+</div>

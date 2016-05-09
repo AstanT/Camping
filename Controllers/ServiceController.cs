@@ -15,12 +15,15 @@ namespace Camping.Controllers
     public class ServiceController : Controller
     {
         private readonly IServicesManager<Services> _servicesManager;
-        private readonly IServicePhotoManager<ServicePhoto> _servicePhotoManager; 
+        private readonly IServicePhotoManager<ServicePhoto> _servicePhotoManager;
+        private readonly ICommentManager<Comments> _commentManager; 
 
-        public ServiceController (IServicesManager<Services> servicesManager, IServicePhotoManager<ServicePhoto> servicePhotoManager  )
+        public ServiceController(IServicesManager<Services> servicesManager,
+            IServicePhotoManager<ServicePhoto> servicePhotoManager, ICommentManager<Comments> commentManager)
         {
             _servicesManager = servicesManager;
             _servicePhotoManager = servicePhotoManager;
+            _commentManager = commentManager;
         }
 
         [AllowAnonymous]
@@ -30,7 +33,7 @@ namespace Camping.Controllers
             {
                 var service = _servicesManager.GetById(id);
                 model = Mapper.Map<Services, ServicePageViewModel>(service);
-
+                model.IdUserInSystem = Convert.ToInt64(Session["UserId"]);
                 List<PhotoViewModel> photos = new List<PhotoViewModel>();
                 IQueryable<ServicePhoto> photosList;
                 photosList =
@@ -41,12 +44,42 @@ namespace Camping.Controllers
                 }
                 model.Photos = photos;
 
+                var commentsService =
+                    _commentManager.GetCommentsByServiceId(service.id).OrderByDescending(x => x.dateOfComment);
+                List<CommentViewModel> comments = new List<CommentViewModel>();
+                foreach (var comment in commentsService)
+                {
+                    comments.Add(Mapper.Map<Comments,CommentViewModel>(comment));
+                }
+                model.Comments = comments;
+
                 return View(model);
             }
             catch (Exception)
             {
                 return View(model);
             }            
+        }
+
+        [AllowAnonymous]
+        public ActionResult DeleteComment(long id)
+        {
+            var comment = _commentManager.GetById(id);
+            _commentManager.Delete(comment);
+            return RedirectToRoute("ServicePage", new {id = comment.id_service});
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult AddComment(ServicePageViewModel model)
+        {
+            if (model.NewComment == null)
+            {
+                return RedirectToRoute("ServicePage", new { id =  model.Id });
+            }
+            var entity = Mapper.Map<ServicePageViewModel, Comments>(model);
+            _commentManager.Add(entity);
+            return RedirectToRoute("ServicePage", new { id = model.Id });
         }
 
         [HttpGet]

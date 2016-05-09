@@ -1,0 +1,14 @@
+﻿@model List<Camping.ViewModels.PhotoViewModel>
+
+<ul class="slides">
+    @foreach (var photo in Model)
+    {
+        <li data-thumb="@photo.Name">
+            <img src="@photo.Name" alt=""/>
+        </li>
+    }
+</ul>
+
+
+
+

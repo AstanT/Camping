@@ -81,7 +81,7 @@ namespace Camping.Controllers
                 if (upload != null && upload.ContentLength > 0)
                 {
                     var pic = new AddPhotos();
-                    pathPic = pic.AddImage(upload, Server.MapPath("~/images/Account/"), "~/images/Account/");
+                    pathPic = pic.AddImage(upload, Server.MapPath("/images/Account/"), "/images/Account/");
                 }
 
                 user = Mapper.Map<EditProfileViewModel, User>(model, user);

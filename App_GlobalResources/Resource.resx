@@ -117,8 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AddComment" xml:space="preserve">
+    <value>Add Comment</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Confirm Password</value>
+  </data>
+  <data name="DateEnd" xml:space="preserve">
+    <value>DateEnd</value>
+  </data>
+  <data name="DateOrder" xml:space="preserve">
+    <value>Date Order</value>
+  </data>
+  <data name="DateStart" xml:space="preserve">
+    <value>Date Start</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Edit</value>
@@ -129,6 +156,9 @@
   <data name="EditProfile" xml:space="preserve">
     <value>Edit Profile</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
   <data name="EmailNotRegistered" xml:space="preserve">
     <value>This Email is not registered</value>
   </data>
@@ -137,6 +167,9 @@
   </data>
   <data name="ForgotPassword" xml:space="preserve">
     <value>Forgot your password?</value>
+  </data>
+  <data name="LastOrders" xml:space="preserve">
+    <value>LastOrders</value>
   </data>
   <data name="Length" xml:space="preserve">
     <value>The password is no more than 20 characters</value>
@@ -153,6 +186,9 @@
   <data name="NewPasswor" xml:space="preserve">
     <value>New Password</value>
   </data>
+  <data name="NotActive" xml:space="preserve">
+    <value>NotActive</value>
+  </data>
   <data name="NotActived" xml:space="preserve">
     <value>Email is not confirmed</value>
   </data>
@@ -165,8 +201,14 @@
   <data name="PasswordLenght" xml:space="preserve">
     <value>The password is at least 6 and no more than 20 characters</value>
   </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
   <data name="Photo" xml:space="preserve">
     <value>Photo</value>
+  </data>
+  <data name="Rating" xml:space="preserve">
+    <value>Rating</value>
   </data>
   <data name="Recovery" xml:space="preserve">
     <value>Password recovery</value>

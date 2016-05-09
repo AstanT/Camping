@@ -6090,8 +6090,8 @@ button.close {
          -o-transition:      -o-transform .6s ease-in-out;
             transition:         transform .6s ease-in-out;
 
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
+    -webkit-backface-visibility: visible;
+            backface-visibility: visible;
     -webkit-perspective: 1000;
             perspective: 1000;
   }
@@ -6356,7 +6356,7 @@ button.close {
   display: block !important;
 }
 .invisible {
-  visibility: hidden;
+  visibility: visible;
 }
 .text-hide {
   font: 0/0 a;

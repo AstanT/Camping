@@ -28,10 +28,16 @@ namespace Camping
 
 
             routes.MapRoute(
-            name: "UserPage",
-            url: "Profile/UserPage/{id}",
-            defaults: new { controller = "Profile", action = "UserPage", id = UrlParameter.Optional }
-            );
+                name: "UserPage",
+                url: "Profile/UserPage/{id}",
+                defaults: new {controller = "Profile", action = "UserPage", id = UrlParameter.Optional}
+                );
+
+            routes.MapRoute(
+               name: "ServicePage",
+               url: "Profile/ServicePage/{id}",
+               defaults: new { controller = "Service", action = "ServicePage", id = UrlParameter.Optional }
+               );
 
             routes.MapRoute(
                 name: "Default",

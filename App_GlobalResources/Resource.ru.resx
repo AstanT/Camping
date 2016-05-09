@@ -117,8 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Active" xml:space="preserve">
+    <value>Активно</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="AddComment" xml:space="preserve">
+    <value>Добавить комментарий </value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Комментарий</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Комментарии</value>
+  </data>
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Подтвердите пароль</value>
+  </data>
+  <data name="DateEnd" xml:space="preserve">
+    <value>Дата окончания</value>
+  </data>
+  <data name="DateOrder" xml:space="preserve">
+    <value>Дата заказа</value>
+  </data>
+  <data name="DateStart" xml:space="preserve">
+    <value>Дата начала</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Редактировать</value>
@@ -129,6 +156,9 @@
   <data name="EditProfile" xml:space="preserve">
     <value>Редактирование профиля</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>Электронная почта</value>
+  </data>
   <data name="EmailNotRegistered" xml:space="preserve">
     <value>Этот электронный адрес не зарегистрирован</value>
   </data>
@@ -137,6 +167,9 @@
   </data>
   <data name="ForgotPassword" xml:space="preserve">
     <value>Забыли пароль?</value>
+  </data>
+  <data name="LastOrders" xml:space="preserve">
+    <value>Последние заказы</value>
   </data>
   <data name="Length" xml:space="preserve">
     <value>The password is no more than 20 characters</value>
@@ -153,6 +186,9 @@
   <data name="NewPasswor" xml:space="preserve">
     <value>Новый пароль</value>
   </data>
+  <data name="NotActive" xml:space="preserve">
+    <value>Не активно</value>
+  </data>
   <data name="NotActived" xml:space="preserve">
     <value>Электронный адрес не подтверждён</value>
   </data>
@@ -165,8 +201,14 @@
   <data name="PasswordLenght" xml:space="preserve">
     <value>The password is at least 6 and no more than 20 characters</value>
   </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
   <data name="Photo" xml:space="preserve">
     <value>Фото</value>
+  </data>
+  <data name="Rating" xml:space="preserve">
+    <value>Рейтинг</value>
   </data>
   <data name="Recovery" xml:space="preserve">
     <value>Востановление пароля</value>

@@ -1,17 +1,9 @@
-﻿
+﻿@using Camping.App_GlobalResources
 @model Camping.ViewModels.ServicePageViewModel
 
 @{
-    ViewBag.Title = "ServicePage";
+    ViewBag.Title = @Model.Name;
 }
-
-
-<div>
-    @Model.Name
-</div>
-
-
-
 
 <!-- banner-bottom -->
 <div class="banner-bottom">
@@ -26,67 +18,8 @@
                             <p>@Model.Type</p>
                             <p>Jump to: <a href="#">Over View</a>|<a href="#">Room Choices</a>|<a href="#">Hotel Information</a></p>
                         </div>
-                        <!--<img src="images/banner1.jpg" alt="">-->
                         <div class="flexslider">
-                            <ul class="slides">
-                                <li data-thumb="images/p1.jpg">
-                                    <img src="images/p1.jpg" alt="" />
-                                </li>
-                                <li data-thumb="images/p2.jpg">
-                                    <img src="images/p2.jpg" alt="" />
-                                </li>
-                                <li data-thumb="images/p3.jpg">
-                                    <img src="images/p3.jpg" alt="" />
-                                </li>
-                                <li data-thumb="images/p4.jpg">
-                                    <img src="images/p4.jpg" alt="" />
-                                </li>
-                                <li data-thumb="images/p1.jpg">
-                                    <img src="images/p1.jpg" alt="" />
-                                </li>
-                                <li data-thumb="images/p2.jpg">
-                                    <img src="images/p2.jpg" alt="" />
-                                </li>
-                                <li data-thumb="images/p3.jpg">
-                                    <img src="images/p3.jpg" alt="" />
-                                </li>
-                                <li data-thumb="images/p4.jpg">
-                                    <img src="images/p4.jpg" alt="" />
-                                </li>
-                                <li data-thumb="images/p1.jpg">
-                                    <img src="images/p1.jpg" alt="" />
-                                </li>
-                                <li data-thumb="images/p2.jpg">
-                                    <img src="images/p2.jpg" alt="" />
-                                </li>
-                                <li data-thumb="images/p3.jpg">
-                                    <img src="images/p3.jpg" alt="" />
-                                </li>
-                                <li data-thumb="images/p4.jpg">
-                                    <img src="images/p4.jpg" alt="" />
-                                </li>
-                                <li data-thumb="images/p1.jpg">
-                                    <img src="images/p1.jpg" alt="" />
-                                </li>
-                                <li data-thumb="images/p2.jpg">
-                                    <img src="images/p2.jpg" alt="" />
-                                </li>
-                                <li data-thumb="images/p3.jpg">
-                                    <img src="images/p3.jpg" alt="" />
-                                </li>
-                                <li data-thumb="images/p4.jpg">
-                                    <img src="images/p4.jpg" alt="" />
-                                </li>
-                                <li data-thumb="images/p1.jpg">
-                                    <img src="images/p1.jpg" alt="" />
-                                </li>
-                                <li data-thumb="images/p2.jpg">
-                                    <img src="images/p2.jpg" alt="" />
-                                </li>
-                                <li data-thumb="images/p3.jpg">
-                                    <img src="images/p3.jpg" alt="" />
-                                </li>
-                            </ul>
+                            @Html.Partial("SlidesServicePage", Model.Photos)
                         </div>
                         <!-- FlexSlider -->
                         <script type="text/javascript">
@@ -111,75 +44,28 @@
                                 @Model.Description
                             </p>
                         </div>
-                        <div class="response">
-                            <h3>Responses</h3>
-                            <div class="media response-info">
-                                <div class="media-left response-text-left">
-                                    <a href="#">
-                                        <img class="media-object" src="images/user1.jpg" alt="">
-                                    </a>
-                                    <h5><a href="#">Admin</a></h5>
-                                </div>
-                                <div class="media-body response-text-right">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    </p>
-                                    <ul>
-                                        <li>June 21, 2013</li>
-                                        <li><a href="single.html">Reply</a></li>
-                                    </ul>
-                                    <div class="media response-info">
-                                        <div class="media-left response-text-left">
-                                            <a href="#">
-                                                <img class="media-object" src="images/user2.jpg" alt="">
-                                            </a>
-                                            <h5><a href="#">Admin</a></h5>
-                                        </div>
-                                        <div class="media-body response-text-right">
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                            </p>
-                                            <ul>
-                                                <li>June 21, 2014</li>
-                                                <li><a href="single.html">Reply</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="clearfix"> </div>
-                                    </div>
-                                </div>
-                                <div class="clearfix"> </div>
+
+                        @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                        {
+                            <div class="opinion">
+                                <h3>@Resource.AddComment</h3>
+                                @using (Html.BeginForm("AddComment", "Service", null, FormMethod.Post, new {enctype = "multipart/form-data"}))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.HiddenFor(model => Model.Id)
+                                    @Html.HiddenFor(model => Model.IdUserInSystem)
+                                    @Html.TextAreaFor(model => model.NewComment, new {@placeholder = Resource.Comment, @rows = "3"})
+                                    <input type="submit" value= @Resource.Add>
+                                }
                             </div>
-                            <div class="media response-info">
-                                <div class="media-left response-text-left">
-                                    <a href="#">
-                                        <img class="media-object" src="images/user3.jpg" alt="">
-                                    </a>
-                                    <h5><a href="#">Admin</a></h5>
-                                </div>
-                                <div class="media-body response-text-right">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    </p>
-                                    <ul>
-                                        <li>June 21, 2013</li>
-                                        <li><a href="single.html">Reply</a></li>
-                                    </ul>
-                                </div>
-                                <div class="clearfix"> </div>
-                            </div>
-                        </div>
-                        <div class="opinion">
-                            <h3>Leave your comment</h3>
-                            <form>
-                                <input type="text" placeholder="Name" required="">
-                                <input type="text" placeholder="Email" required="">
-                                <textarea placeholder="Message" required=""></textarea>
-                                <input type="submit" value="SEND">
-                            </form>
-                        </div>
+                        }
+                        
+
+
+                        @Html.Partial("Comments", Model.Comments)
+
+                        
+                        
                     </div>
                 </div>
                 <div class="col-md-4 single-gd-rt">
@@ -196,30 +82,17 @@
                             </script>
                         </div>
                         <div class="sp-bor-btn text-right">
-                            <h4><span>$8,750</span> $4,850</h4>
-                            <p class="best-pri">Best price</p>
+                            <h4>@Model.Price</h4>
                             <a class="best-btn" href="booking.html">Book Now</a>
                         </div>
                     </div>
                     <br>
                     <div class="other-comments">
                         <div class="comments-head">
-                            <h3>Excellent</h3>
-                            <p>4.5/5</p>
+                            <h3>@Resource.Rating</h3>
+                            <p>@Model.Rating/5</p>
                             <div class="clearfix"></div>
-                        </div>
-                        <div class="comments-bot">
-                            <p>"Vestibulum ullamcorper condimentum luctus. Ut ullamcorper elit eu auctor commodo."</p>
-                            <h4><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> John Doe</h4>
-                        </div>
-                        <div class="comments-bot">
-                            <p>"Aliquam non purus quis tellus varius egestas ut vitae tellus. Pellentesque non est ac tortor maximus imperdiet at id quam."</p>
-                            <h4><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Luther</h4>
-                        </div>
-                        <div class="comments-bot">
-                            <p>"Vestibulum sapien quam, interdum quis bibendum quis, malesuada a nisi. Proin at blandit justo."</p>
-                            <h4><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Patrick</h4>
-                        </div>
+                        </div>                       
                     </div>
                 </div>
                 <div class="clearfix"></div>

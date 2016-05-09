@@ -6229,7 +6229,7 @@ body.modal-open,
 }
 
 .invisible {
-  visibility: hidden;
+  visibility: visible;
 }
 
 .text-hide {
@@ -6256,7 +6256,7 @@ body.modal-open,
 
 .hidden {
   display: none !important;
-  visibility: hidden !important;
+  visibility: visible !important;
 }
 
 .visible-xs {
