@@ -222,7 +222,6 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\Account\account.jpg" />
-    <Content Include="images\Services\4.jpg" />
     <Content Include="images\arrow-s.png" />
     <Content Include="images\arrow.png" />
     <Content Include="images\b-arrow.png" />
@@ -231,6 +230,8 @@
     <Content Include="images\icon.png" />
     <Content Include="images\menu.png" />
     <Content Include="images\s-arrow.png" />
+    <Content Include="images\Services\1.jpg" />
+    <Content Include="images\Services\2.jpg" />
     <Content Include="js\easyResponsiveTabs.js" />
     <Content Include="js\JFCore.js" />
     <Content Include="js\JFForms.js" />
@@ -291,6 +292,7 @@
     <Content Include="Views\Shared\LastOrder.cshtml" />
     <Content Include="Views\Shared\SlidesServicePage.cshtml" />
     <Content Include="Views\Shared\Comments.cshtml" />
+    <Content Include="Views\Shared\NewOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

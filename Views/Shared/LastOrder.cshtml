@@ -4,34 +4,36 @@
 <div class="top-destinations-info">
     <h2> @Resource.LastOrders</h2>
 </div>
-<div class="top-destinations-bottom">
+
     @foreach (var order in Model)
     {
-        <br/>
-        <div class="td-grids">          
-            <div class="col-xs-7 td-middle">
-                <a href="@Url.Action("ServicePage", "Service", new { id = order.Id }, null)">
-                    <h4>@order.Name</h4>
-                </a>
-                <br/><h5>@Resource.DateOrder : @order.DateStart</h5>
-                <br/><h5>@Resource.DateStart : @order.DateStart</h5>
-                <br /><h5>@Resource.DateEnd : @order.DateEnd</h5>
+        <div class="top-destinations-bottom">
+            <br/>
+            <div class="td-grids">
+                <div class="col-xs-7 td-middle">
+                    <a href="@Url.Action("ServicePage", "Service", new {id = order.Id}, null)">
+                        <h4>@order.Name</h4>
+                    </a>
+                    <br/><h5>@Resource.DateOrder : @order.DateStart</h5>
+                    <br/><h5>@Resource.DateStart : @order.DateStart</h5>
+                    <br/><h5>@Resource.DateEnd : @order.DateEnd</h5>
+                </div>
+                <div class="col-xs-2 td-right">
+                    @if (order.IsActive)
+                    {
+                        <p>@Resource.Active</p>
+                    }
+                    @if (!order.IsActive)
+                    {
+                        <p>@Resource.NotActived</p>
+                    }
+                </div>
+                <div class="clearfix"> </div>
             </div>
-            <div class="col-xs-2 td-right">
-                @if (order.IsActive)
-                {
-                    <p>@Resource.Active</p>
-                }
-                @if (!order.IsActive)
-                {
-                    <p>@Resource.NotActived</p>
-                }              
-            </div>
-            <div class="clearfix"> </div>
         </div>
     }
-</div>
+        
 
 
 
-    
+

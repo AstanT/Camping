@@ -1,6 +1,6 @@
 ﻿@using Camping.App_GlobalResources
 @model Camping.ViewModels.ServicePageViewModel
-
+@{ long userInSystem = Convert.ToInt64(Session["UserId"]);}
 @{
     ViewBag.Title = @Model.Name;
 }
@@ -22,19 +22,7 @@
                             @Html.Partial("SlidesServicePage", Model.Photos)
                         </div>
                         <!-- FlexSlider -->
-                        <script type="text/javascript">
- $(function(){
-			SyntaxHighlighter.all();
-			});
-			$(window).load(function(){
-			$('.flexslider').flexslider({
-			animation: "slide",
-			start: function(slider){
-			$('body').removeClass('loading');
-			}
-			});
-		});
-                        </script>
+                       
 
                         <div class="blog-left-right">
                             <p>
@@ -45,10 +33,24 @@
                             </p>
                         </div>
 
+                        @if (HttpContext.Current.User.Identity.IsAuthenticated && userInSystem == 1)
+                        {
+                            <div class="opinion">
+                                <br/><h3>@Resource.AddComment</h3>
+                                @using (Html.BeginForm("AddPhotoService", "Service", null, FormMethod.Post, new {enctype = "multipart/form-data"}))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.HiddenFor(model => Model.Id)
+                                    <input type="file" id="NewPhoto" name="upload"/>
+                                    <input type="submit" value=@Resource.Add>
+                                }
+                            </div>                           
+                        }
+
                         @if (HttpContext.Current.User.Identity.IsAuthenticated)
                         {
                             <div class="opinion">
-                                <h3>@Resource.AddComment</h3>
+                                <br/><h3>@Resource.AddComment</h3>
                                 @using (Html.BeginForm("AddComment", "Service", null, FormMethod.Post, new {enctype = "multipart/form-data"}))
                                 {
                                     @Html.AntiForgeryToken()
@@ -60,11 +62,7 @@
                             </div>
                         }
                         
-
-
-                        @Html.Partial("Comments", Model.Comments)
-
-                        
+                        @Html.Partial("Comments", Model.Comments)                        
                         
                     </div>
                 </div>
@@ -92,7 +90,17 @@
                             <h3>@Resource.Rating</h3>
                             <p>@Model.Rating/5</p>
                             <div class="clearfix"></div>
-                        </div>                       
+                        </div>
+                        <div class="comments-head">
+                            <h3>@Resource.ClientMax</h3>
+                            <p>@Model.ClientMax</p>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="comments-head">
+                            <h3>@Resource.Prepaymant</h3>
+                            <p>@Model.Prepaymant</p>
+                            <div class="clearfix"></div>
+                        </div> 
                     </div>
                 </div>
                 <div class="clearfix"></div>

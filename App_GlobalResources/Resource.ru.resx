@@ -126,6 +126,12 @@
   <data name="AddComment" xml:space="preserve">
     <value>Добавить комментарий </value>
   </data>
+  <data name="AddPhoto" xml:space="preserve">
+    <value>Добавить фото</value>
+  </data>
+  <data name="ClientMax" xml:space="preserve">
+    <value>Доступно</value>
+  </data>
   <data name="Comment" xml:space="preserve">
     <value>Комментарий</value>
   </data>
@@ -206,6 +212,9 @@
   </data>
   <data name="Photo" xml:space="preserve">
     <value>Фото</value>
+  </data>
+  <data name="Prepaymant" xml:space="preserve">
+    <value>Предоплата</value>
   </data>
   <data name="Rating" xml:space="preserve">
     <value>Рейтинг</value>

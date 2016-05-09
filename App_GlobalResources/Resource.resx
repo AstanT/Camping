@@ -126,6 +126,12 @@
   <data name="AddComment" xml:space="preserve">
     <value>Add Comment</value>
   </data>
+  <data name="AddPhoto" xml:space="preserve">
+    <value>Add Photo</value>
+  </data>
+  <data name="ClientMax" xml:space="preserve">
+    <value>Client Max</value>
+  </data>
   <data name="Comment" xml:space="preserve">
     <value>Comment</value>
   </data>
@@ -206,6 +212,9 @@
   </data>
   <data name="Photo" xml:space="preserve">
     <value>Photo</value>
+  </data>
+  <data name="Prepaymant" xml:space="preserve">
+    <value>Prepaymant</value>
   </data>
   <data name="Rating" xml:space="preserve">
     <value>Rating</value>

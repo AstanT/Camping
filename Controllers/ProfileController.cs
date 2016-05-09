@@ -151,5 +151,10 @@ namespace Camping.Controllers
                 return View();
             }
         }
+
+        /*[HttpPost]
+        [AllowAnonymous]
+        public ActionResult */
+
     }
 }

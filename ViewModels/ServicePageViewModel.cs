@@ -17,6 +17,7 @@ namespace Camping.ViewModels
         public bool IsActive { get; set; }
         public decimal Prepaymant { get; set; }
         public string NewComment { get; set; }
+        public string NewPhoto { get; set; }
         public long IdUserInSystem { get; set; }
         public List<PhotoViewModel> Photos { get; set; }
         public List<CommentViewModel> Comments { get; set; }

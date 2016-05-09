@@ -88,6 +88,24 @@ namespace Camping.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Photo.
+        /// </summary>
+        public static string AddPhoto {
+            get {
+                return ResourceManager.GetString("AddPhoto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client Max.
+        /// </summary>
+        public static string ClientMax {
+            get {
+                return ResourceManager.GetString("ClientMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Comment.
         /// </summary>
         public static string Comment {
@@ -327,6 +345,15 @@ namespace Camping.App_GlobalResources {
         public static string Photo {
             get {
                 return ResourceManager.GetString("Photo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prepaymant.
+        /// </summary>
+        public static string Prepaymant {
+            get {
+                return ResourceManager.GetString("Prepaymant", resourceCulture);
             }
         }
         

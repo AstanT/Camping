@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
+using Camping.BL;
 using Camping.Core;
 using Camping.Filters;
 using Camping.Interfaces.Manager;
@@ -80,6 +81,32 @@ namespace Camping.Controllers
             var entity = Mapper.Map<ServicePageViewModel, Comments>(model);
             _commentManager.Add(entity);
             return RedirectToRoute("ServicePage", new { id = model.Id });
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult AddPhotoService(ServicePageViewModel model, HttpPostedFileBase upload)
+        {
+            try
+            {
+                var pic = new AddPhotos();
+                var pathPic = pic.AddImage(upload, Server.MapPath("/images/Services/"), "/images/Services/");
+                var entity = new ServicePhoto()
+                {
+                    id_service = model.Id,
+                    photo = new Photo()
+                    {
+                        name = pathPic,
+                        date = DateTime.Now,
+                    }
+                };
+                _servicePhotoManager.Add(entity);
+                return RedirectToRoute("ServicePage", new { id = model.Id });
+            }
+            catch (Exception)
+            {
+                return RedirectToRoute("ServicePage", new { id = model.Id });
+            }
         }
 
         [HttpGet]
