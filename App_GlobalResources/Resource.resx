@@ -132,6 +132,9 @@
   <data name="ClientMax" xml:space="preserve">
     <value>Client Max</value>
   </data>
+  <data name="ClientsAmount" xml:space="preserve">
+    <value>Clients Amount</value>
+  </data>
   <data name="Comment" xml:space="preserve">
     <value>Comment</value>
   </data>
@@ -142,7 +145,7 @@
     <value>Confirm Password</value>
   </data>
   <data name="DateEnd" xml:space="preserve">
-    <value>DateEnd</value>
+    <value>Date End</value>
   </data>
   <data name="DateOrder" xml:space="preserve">
     <value>Date Order</value>
@@ -174,6 +177,9 @@
   <data name="ForgotPassword" xml:space="preserve">
     <value>Forgot your password?</value>
   </data>
+  <data name="Houses" xml:space="preserve">
+    <value>Houses</value>
+  </data>
   <data name="LastOrders" xml:space="preserve">
     <value>LastOrders</value>
   </data>
@@ -186,6 +192,9 @@
   <data name="LogOff" xml:space="preserve">
     <value>LogOff</value>
   </data>
+  <data name="MyOrders" xml:space="preserve">
+    <value>My Orders</value>
+  </data>
   <data name="MyPage" xml:space="preserve">
     <value>MyPage</value>
   </data>
@@ -197,6 +206,9 @@
   </data>
   <data name="NotActived" xml:space="preserve">
     <value>Email is not confirmed</value>
+  </data>
+  <data name="Parking" xml:space="preserve">
+    <value>Parking</value>
   </data>
   <data name="PassMismatch" xml:space="preserve">
     <value>Passwords do not match</value>
@@ -216,6 +228,9 @@
   <data name="Prepaymant" xml:space="preserve">
     <value>Prepaymant</value>
   </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
   <data name="Rating" xml:space="preserve">
     <value>Rating</value>
   </data>
@@ -227,6 +242,9 @@
   </data>
   <data name="Send" xml:space="preserve">
     <value>Send</value>
+  </data>
+  <data name="TotalPrice" xml:space="preserve">
+    <value>Total Price</value>
   </data>
   <data name="WrongFormatEmail" xml:space="preserve">
     <value>Wrong Format Email</value>

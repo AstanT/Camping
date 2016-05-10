@@ -106,6 +106,15 @@ namespace Camping.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clients Amount.
+        /// </summary>
+        public static string ClientsAmount {
+            get {
+                return ResourceManager.GetString("ClientsAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Comment.
         /// </summary>
         public static string Comment {
@@ -133,7 +142,7 @@ namespace Camping.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DateEnd.
+        ///   Looks up a localized string similar to Date End.
         /// </summary>
         public static string DateEnd {
             get {
@@ -232,6 +241,15 @@ namespace Camping.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Houses.
+        /// </summary>
+        public static string Houses {
+            get {
+                return ResourceManager.GetString("Houses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to LastOrders.
         /// </summary>
         public static string LastOrders {
@@ -268,6 +286,15 @@ namespace Camping.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My Orders.
+        /// </summary>
+        public static string MyOrders {
+            get {
+                return ResourceManager.GetString("MyOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MyPage.
         /// </summary>
         public static string MyPage {
@@ -300,6 +327,15 @@ namespace Camping.App_GlobalResources {
         public static string NotActived {
             get {
                 return ResourceManager.GetString("NotActived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parking.
+        /// </summary>
+        public static string Parking {
+            get {
+                return ResourceManager.GetString("Parking", resourceCulture);
             }
         }
         
@@ -358,6 +394,15 @@ namespace Camping.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string Price {
+            get {
+                return ResourceManager.GetString("Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rating.
         /// </summary>
         public static string Rating {
@@ -390,6 +435,15 @@ namespace Camping.App_GlobalResources {
         public static string Send {
             get {
                 return ResourceManager.GetString("Send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Price.
+        /// </summary>
+        public static string TotalPrice {
+            get {
+                return ResourceManager.GetString("TotalPrice", resourceCulture);
             }
         }
         

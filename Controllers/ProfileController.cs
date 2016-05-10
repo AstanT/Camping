@@ -17,14 +17,17 @@ namespace Camping.Controllers
     public class ProfileController : Controller
     {
         private readonly IUserManager<User> _userManager;
-        private readonly IOrderManager<Order> _orderManager; 
+        private readonly IOrderManager<Order> _orderManager;
+        private readonly IServicesManager<Services> _servicesManager;
 
-        public ProfileController(IUserManager<User> userManager, IOrderManager<Order> orderManager)
+        public ProfileController(IUserManager<User> userManager, IOrderManager<Order> orderManager,
+            IServicesManager<Services> servicesManager)
         {
             _userManager = userManager;
             _orderManager = orderManager;
+            _servicesManager = servicesManager;
         }
-        
+
         public ActionResult UserPage(long? id)
         {
             if (id != null) return UserPage(new UserPageViewModel(), id);
@@ -152,9 +155,31 @@ namespace Camping.Controllers
             }
         }
 
-        /*[HttpPost]
+        [HttpPost]
         [AllowAnonymous]
-        public ActionResult */
+        public ActionResult NewOrder(ServicePageViewModel model)
+        {
+            try
+            {
+                var service = _servicesManager.GetById(model.Id);
+                model.Price = service.price;
+                var entity = Mapper.Map<ServicePageViewModel, Order>(model);
+                _orderManager.Add(entity);
+                return RedirectToRoute("UserPage");
+            }
+            catch (Exception)
+            {
+                return RedirectToRoute("ServicePage", new { id = model.Id });
+            }            
+        }
+
+        [AllowAnonymous]
+        public ActionResult DeleteOrder(long id)
+        {
+            var order = _orderManager.GetById(id);
+            _orderManager.Delete(order);
+            return RedirectToRoute("ServicePage");
+        }
 
     }
 }

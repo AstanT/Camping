@@ -60,6 +60,9 @@ namespace Camping.App_Start
             Mapper.CreateMap<Order, OrderViewModel>().AfterMap((p, m) =>
             {
                 m.Id = p.id;
+                m.IdService = p.id_service;
+                m.TotalPrice = p.totalPrice;
+                m.ClientsAmount = p.clientsAmount;
                 m.Name = p.services.name;
                 m.DateStart = p.dateStart;
                 m.DateEnd = p.dateEnd;
@@ -75,6 +78,7 @@ namespace Camping.App_Start
 
             Mapper.CreateMap<Services, ServicesViewModel>().AfterMap((p, m) =>
             {
+                m.IdService = p.id;
                 m.Type = p.type;
                 m.Name = p.name;
                 m.Prise = p.price;
@@ -99,6 +103,18 @@ namespace Camping.App_Start
                 m.id_user = p.IdUserInSystem;
                 m.commentText = p.NewComment;
                 m.dateOfComment = DateTime.Now;
+            });
+
+            Mapper.CreateMap<ServicePageViewModel, Order>().AfterMap((p, m) =>
+            {
+                m.id_user = p.IdUserInSystem;
+                m.id_service = p.Id;
+                m.dateOrder = DateTime.Now;
+                m.dateStart = Convert.ToDateTime(p.NewOrder.DateStart);
+                m.dateEnd = Convert.ToDateTime(p.NewOrder.DateEnd);
+                m.clientsAmount = Convert.ToInt64(p.NewOrder.ClientsAmount);
+                m.totalPrice = p.NewOrder.ClientsAmount*p.Price;
+                m.isActive = true;
             });
         }
     }

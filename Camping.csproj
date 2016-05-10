@@ -200,12 +200,13 @@
     <Compile Include="ViewModels\EditPasswordViewModel.cs" />
     <Compile Include="ViewModels\EditProfileViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\NewOrderViewModel.cs" />
     <Compile Include="ViewModels\OrderViewModel.cs" />
     <Compile Include="ViewModels\PassRecoveryViewModel.cs" />
     <Compile Include="ViewModels\PhotoViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\ServicePageViewModel.cs" />
-    <Compile Include="ViewModels\HouseViewModel.cs" />
+    <Compile Include="ViewModels\ListServisesViewModel.cs" />
     <Compile Include="ViewModels\ServicesViewModel.cs" />
     <Compile Include="ViewModels\UserOrdersPageViewModel.cs" />
     <Compile Include="ViewModels\UserPageViewModel.cs" />
@@ -288,7 +289,7 @@
     <Content Include="Views\Account\EndPassRecovery.cshtml" />
     <Content Include="Views\Profile\UserOrders.cshtml" />
     <Content Include="Views\Profile\EditPassword.cshtml" />
-    <Content Include="Views\Service\House.cshtml" />
+    <Content Include="Views\Service\ListServises.cshtml" />
     <Content Include="Views\Shared\LastOrder.cshtml" />
     <Content Include="Views\Shared\SlidesServicePage.cshtml" />
     <Content Include="Views\Shared\Comments.cshtml" />

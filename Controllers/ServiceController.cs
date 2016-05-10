@@ -111,13 +111,13 @@ namespace Camping.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult House(HouseViewModel model)
+        public ActionResult ListServises(ListServisesViewModel model, string type)
         {
             List<ServicesViewModel> services = new List<ServicesViewModel>();
             List<PhotoViewModel> photos = new List<PhotoViewModel>();
             IQueryable<Services> houses;
 
-            houses = _servicesManager.GetHouse("House").OrderByDescending(x => x.rating);
+            houses = _servicesManager.GetHouse(type).OrderByDescending(x => x.rating);
 
             foreach (var house in houses)
             {
@@ -131,6 +131,7 @@ namespace Camping.Controllers
                 home.Photo = photos[0].Name;
                 services.Add(home);
             }
+            model.Type = type;
             model.SeervicesList = services;
             return View(model);
         }

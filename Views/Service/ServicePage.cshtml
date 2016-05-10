@@ -15,19 +15,17 @@
                     <div class="blog-left-grid single-left-grid">
                         <div class="single-pg-hdr">
                             <h2>@Model.Name</h2>
-                            <p>@Model.Type</p>
-                            <p>Jump to: <a href="#">Over View</a>|<a href="#">Room Choices</a>|<a href="#">Hotel Information</a></p>
+                            <p>
+                                <h3>@Model.Type</h3>
+                            </p>
                         </div>
                         <div class="flexslider">
                             @Html.Partial("SlidesServicePage", Model.Photos)
                         </div>
                         <!-- FlexSlider -->
-                       
+
 
                         <div class="blog-left-right">
-                            <p>
-                                @Model.Description
-                            </p>
                             <p>
                                 @Model.Description
                             </p>
@@ -67,25 +65,38 @@
                     </div>
                 </div>
                 <div class="col-md-4 single-gd-rt">
-                    <div class="spl-btn">
+                    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                    {
                         <div class="spl-btn-bor">
-                            <a href="#">
-                                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                            </a>
-                            <p>Special Offer</p>
-                            <script>
-										$(document).ready(function(){
-										$('[data-toggle="tooltip"]').tooltip();
-										});
-                            </script>
+                            @using (Html.BeginForm("NewOrder", "Profile", null, FormMethod.Post, new {enctype = "multipart/form-data"}))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.HiddenFor(model => Model.Id)
+                                @Html.HiddenFor(model => Model.IdUserInSystem)                              
+                                <h5>@Resource.DateStart</h5>
+                                <div class="book_date">
+                                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                    @Html.TextBoxFor(model => model.NewOrder.DateStart, new {type = "date"})
+                                </div>
+                                <br/><h5>@Resource.DateEnd</h5>
+                                <div class="book_date">
+                                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                    @Html.TextBoxFor(model => model.NewOrder.DateEnd, new {type = "date"})
+                                </div>
+                                <br/><h5>@Resource.ClientsAmount</h5>
+                                @Html.TextBoxFor(model => model.NewOrder.ClientsAmount, new {type = "number", min = "1", max = @Model.ClientMax, style = "width: 100%"})
+                                <br /><br /><input type="submit" value=@Resource.Add > 
+                            }
                         </div>
-                        <div class="sp-bor-btn text-right">
-                            <h4>@Model.Price</h4>
-                            <a class="best-btn" href="booking.html">Book Now</a>
-                        </div>
-                    </div>
+                    }
+
                     <br>
                     <div class="other-comments">
+                        <div class="comments-head">
+                            <h3>@Resource.Price</h3>
+                            <p>$@Model.Price</p>
+                            <div class="clearfix"></div>
+                        </div>
                         <div class="comments-head">
                             <h3>@Resource.Rating</h3>
                             <p>@Model.Rating/5</p>
@@ -100,7 +111,7 @@
                             <h3>@Resource.Prepaymant</h3>
                             <p>@Model.Prepaymant</p>
                             <div class="clearfix"></div>
-                        </div> 
+                        </div>
                     </div>
                 </div>
                 <div class="clearfix"></div>

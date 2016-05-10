@@ -1,7 +1,58 @@
-﻿@model Camping.ViewModels.UserOrdersPageViewModel
+﻿@using Camping.App_GlobalResources
+@model Camping.ViewModels.UserOrdersPageViewModel
 @{
-    ViewBag.Title = "UserOrders";
+    ViewBag.Title = @Resource.MyOrders;
 }
-
-<h2>UserOrders</h2>
-
+<div class="banner-bottom">
+    <div class="container">
+        <div class="c-rooms">
+            @foreach (var order in Model.UserOrders)
+            {
+                <div class="p-table">
+                    <div class="p-table-grids">
+                        <div class="col-md-2 p-table-grid">
+                            <div class="p-table-grid-info">                               
+                                <div class="room-basic-info">
+                                    <a href="@Url.Action("ServicePage", "Service", new {id = order.IdService}, null)">
+                                        <h4>@order.Name</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 p-table-grid">
+                            <div class="rate-features">
+                                <ul>
+                                    <li><h5>@Resource.DateOrder : @order.DateStart</h5></li>
+                                    <li><h5>@Resource.DateStart : @order.DateStart</h5></li>
+                                    <li><h5>@Resource.DateEnd : @order.DateEnd</h5></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 p-table-grid">
+                            <div class="avg-rate">
+                                <h5>@Resource.TotalPrice</h5>
+                                <span class="p-offer">$@order.TotalPrice</span>
+                                <h5>@Resource.ClientsAmount</h5>
+                                <span class="p-offer">@order.ClientsAmount</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 p-table-grid">
+                            <div class="book-button-column">
+                                @if (order.IsActive)
+                                {
+                                    <a>@Resource.Active</a>
+                                }
+                                @if (!order.IsActive)
+                                {
+                                    <a>@Resource.NotActived</a>
+                                }
+                                @Html.ActionLink(@Resource.Delete, "DeleteOrder","Profile", new { id = order.Id }, null)                               
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>            
+            }
+        </div>
+    </div>
+</div>

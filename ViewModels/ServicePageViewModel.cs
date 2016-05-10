@@ -21,5 +21,6 @@ namespace Camping.ViewModels
         public long IdUserInSystem { get; set; }
         public List<PhotoViewModel> Photos { get; set; }
         public List<CommentViewModel> Comments { get; set; }
+        public NewOrderViewModel NewOrder { get; set; }
     }
 }

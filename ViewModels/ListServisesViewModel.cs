@@ -5,8 +5,9 @@ using System.Web;
 
 namespace Camping.ViewModels
 {
-    public class HouseViewModel
+    public class ListServisesViewModel
     {
+        public string Type { get; set; }
         public List<ServicesViewModel> SeervicesList { get; set; }
     }
 }
