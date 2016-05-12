@@ -8,6 +8,7 @@ namespace Camping.ViewModels
     public class ListServisesViewModel
     {
         public string Type { get; set; }
+        public SearchViewModel Search { get; set; }
         public List<ServicesViewModel> SeervicesList { get; set; }
     }
 }

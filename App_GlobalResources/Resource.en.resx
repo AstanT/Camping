@@ -129,6 +129,9 @@
   <data name="AddPhoto" xml:space="preserve">
     <value>Add Photo</value>
   </data>
+  <data name="AddService" xml:space="preserve">
+    <value>AddService</value>
+  </data>
   <data name="ClientMax" xml:space="preserve">
     <value>Client Max</value>
   </data>
@@ -155,6 +158,9 @@
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Edit</value>
@@ -198,6 +204,9 @@
   <data name="MyPage" xml:space="preserve">
     <value>MyPage</value>
   </data>
+  <data name="NameService" xml:space="preserve">
+    <value>Name</value>
+  </data>
   <data name="NewPasswor" xml:space="preserve">
     <value>New Password</value>
   </data>
@@ -206,6 +215,9 @@
   </data>
   <data name="NotActived" xml:space="preserve">
     <value>Email is not confirmed</value>
+  </data>
+  <data name="OtherServices" xml:space="preserve">
+    <value>OtherServices</value>
   </data>
   <data name="Parking" xml:space="preserve">
     <value>Parking</value>
@@ -239,6 +251,9 @@
   </data>
   <data name="Registration" xml:space="preserve">
     <value>Registration</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
   </data>
   <data name="Send" xml:space="preserve">
     <value>Send</value>

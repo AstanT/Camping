@@ -97,6 +97,15 @@ namespace Camping.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AddService.
+        /// </summary>
+        public static string AddService {
+            get {
+                return ResourceManager.GetString("AddService", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Client Max.
         /// </summary>
         public static string ClientMax {
@@ -174,6 +183,15 @@ namespace Camping.App_GlobalResources {
         public static string Delete {
             get {
                 return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
             }
         }
         
@@ -304,6 +322,15 @@ namespace Camping.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string NameService {
+            get {
+                return ResourceManager.GetString("NameService", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New Password.
         /// </summary>
         public static string NewPasswor {
@@ -327,6 +354,15 @@ namespace Camping.App_GlobalResources {
         public static string NotActived {
             get {
                 return ResourceManager.GetString("NotActived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OtherServices.
+        /// </summary>
+        public static string OtherServices {
+            get {
+                return ResourceManager.GetString("OtherServices", resourceCulture);
             }
         }
         
@@ -426,6 +462,15 @@ namespace Camping.App_GlobalResources {
         public static string Registration {
             get {
                 return ResourceManager.GetString("Registration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
             }
         }
         

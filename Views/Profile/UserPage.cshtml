@@ -27,6 +27,11 @@
                         <br/><br/><br/><h4>@Html.ActionLink(@Resource.EditProfile, "EditProfile", new { id = Model.IdUserPage }, new { @style = " color: #000 " })</h4>
                         <br/><h4>@Html.ActionLink(@Resource.EditPassword, "EditPassword", new { id = Model.IdUserPage }, new { @style = " color: #000 " })</h4>
                     }
+
+                    @if (HttpContext.Current.User.Identity.IsAuthenticated && Model.IdUserPage == userInSystem && userInSystem == 1)
+                    {
+                        <br /><h4>@Html.ActionLink(@Resource.AddService, "AddService","Service", null, new { @style = " color: #000 " })</h4>
+                    }
                 </div>
             </div>
             <div class="clearfix"> </div>

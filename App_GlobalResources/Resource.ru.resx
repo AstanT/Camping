@@ -129,6 +129,9 @@
   <data name="AddPhoto" xml:space="preserve">
     <value>Добавить фото</value>
   </data>
+  <data name="AddService" xml:space="preserve">
+    <value>Добавить услугу</value>
+  </data>
   <data name="ClientMax" xml:space="preserve">
     <value>Доступно</value>
   </data>
@@ -155,6 +158,9 @@
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Удалить</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Описание</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Редактировать</value>
@@ -198,6 +204,9 @@
   <data name="MyPage" xml:space="preserve">
     <value>Моя страница</value>
   </data>
+  <data name="NameService" xml:space="preserve">
+    <value>Название</value>
+  </data>
   <data name="NewPasswor" xml:space="preserve">
     <value>Новый пароль</value>
   </data>
@@ -206,6 +215,9 @@
   </data>
   <data name="NotActived" xml:space="preserve">
     <value>Электронный адрес не подтверждён</value>
+  </data>
+  <data name="OtherServices" xml:space="preserve">
+    <value>Прочие услуги</value>
   </data>
   <data name="Parking" xml:space="preserve">
     <value>Парковка</value>
@@ -239,6 +251,9 @@
   </data>
   <data name="Registration" xml:space="preserve">
     <value>Регистрация</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Поиск</value>
   </data>
   <data name="Send" xml:space="preserve">
     <value>Отправить</value>

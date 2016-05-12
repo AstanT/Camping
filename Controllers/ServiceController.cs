@@ -109,17 +109,30 @@ namespace Camping.Controllers
             }
         }
 
-        [HttpGet]
+        
         [AllowAnonymous]
         public ActionResult ListServises(ListServisesViewModel model, string type)
         {
             List<ServicesViewModel> services = new List<ServicesViewModel>();
             List<PhotoViewModel> photos = new List<PhotoViewModel>();
-            IQueryable<Services> houses;
+            IQueryable<Services> listServices;
 
-            houses = _servicesManager.GetHouse(type).OrderByDescending(x => x.rating);
+            if (model.Search != null)
+            {
+                if (model.Search.PriceEnd == 0)
+                {
+                    model.Search.PriceEnd = long.MaxValue;
+                }
+                listServices =
+                    _servicesManager.Serch(type, model.Search.Name, Convert.ToInt16(model.Search.Rating), model.Search.PriceStart,
+                        model.Search.PriceEnd).OrderByDescending(x => x.rating);
+            }
+            else
+            {
+                listServices = _servicesManager.GetServices(type).OrderByDescending(x => x.rating);
+            }           
 
-            foreach (var house in houses)
+            foreach (var house in listServices)
             {
                 var photosHouse = _servicePhotoManager.GetServicePhotosByServiceId(house.id);
                 photos.Clear();
@@ -135,5 +148,29 @@ namespace Camping.Controllers
             model.SeervicesList = services;
             return View(model);
         }
+
+        [AllowAnonymous]
+        public ActionResult AddService()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddService(AddServiceViewModel model, HttpPostedFileBase upload)
+        {
+            try
+            {
+
+
+                return RedirectToRoute("UserPage");
+            }
+            catch (Exception)
+            {
+                return View();
+            }
+        }
+
     }
 }

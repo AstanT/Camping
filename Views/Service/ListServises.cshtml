@@ -1,5 +1,6 @@
 ﻿@using Camping.App_GlobalResources
 @model Camping.ViewModels.ListServisesViewModel
+@{ string typeForSearch = Model.Type;}
 @{
     ViewBag.Title = @Model.Type;
 }
@@ -8,7 +9,26 @@
         <div class="faqs-top-grids">
             <div class="product-grids">
                 <div class="col-md-3 product-left">
-                    
+                    @using (Html.BeginForm("ListServises", "Service",new { type = typeForSearch }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.EditorFor(model => model.Search.Name, new { htmlAttributes = new { @autocomplete = "off", @placeholder = Resource.NameService, @class = "form-control" } })
+
+                        <div class="h-class">
+                            
+                            <div>
+                                <br /><h4>@Resource.Rating</h4>
+                                <br /><h5> @Html.RadioButtonFor(model => model.Search.Rating, "1", null) @Resource.Rating : 1</h5>
+                                <h5> @Html.RadioButtonFor(model => model.Search.Rating, "2", null) @Resource.Rating : 2</h5>
+                                <h5> @Html.RadioButtonFor(model => model.Search.Rating, "3", null) @Resource.Rating : 3</h5>
+                                <h5> @Html.RadioButtonFor(model => model.Search.Rating, "4", null) @Resource.Rating : 4</h5>
+                                <h5> @Html.RadioButtonFor(model => model.Search.Rating, "5", null) @Resource.Rating : 5</h5>
+                                <br /><br /><h4>@Resource.Price</h4>
+                                <br />@Html.EditorFor(model => model.Search.PriceStart, new { htmlAttributes = new { @autocomplete = "off", @placeholder = "Min", @class = "form-control" } })
+                                <br />@Html.EditorFor(model => model.Search.PriceEnd, new { htmlAttributes = new { @autocomplete = "off", @placeholder = "Max", @class = "form-control" } })
+                                <br/><input type="submit" style="width: 100%" value=@Resource.Search class="comment-btn" />
+                            </div>
+                        </div>
+                    }
                 </div>
                 <div class="col-md-9 product-right">
                     @foreach (var house in Model.SeervicesList)
@@ -29,7 +49,7 @@
                                         </a>                                      
                                     </div>
                                     <div class="col-md-6 p-right-right">
-                                        <h6>@house.Rating/5</h6>
+                                        <h6>@Resource.Rating: @house.Rating/5</h6>
                                         <span class="p-offer">$@house.Prise</span>
                                     </div>
                                     <div class="clearfix"> </div>

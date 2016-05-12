@@ -25,20 +25,19 @@ namespace Camping
                 url: "Account/EndPassRecovery",
                 defaults: new {controller = "Account", action = "EndPassRecovery" }
                 );
-
-
+            routes.MapRoute(
+               name: "ServicePage",
+               url: "Service/ServicePage",
+               defaults: new { controller = "Service", action = "ServicePage" }
+               );
+            
             routes.MapRoute(
                 name: "UserPage",
                 url: "Profile/UserPage/{id}",
                 defaults: new {controller = "Profile", action = "UserPage", id = UrlParameter.Optional}
                 );
 
-            routes.MapRoute(
-               name: "ServicePage",
-               url: "Profile/ServicePage/{id}",
-               defaults: new { controller = "Service", action = "ServicePage", id = UrlParameter.Optional }
-               );
-
+            
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

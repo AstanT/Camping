@@ -1,0 +1,18 @@
+﻿@using Camping.App_GlobalResources
+@model Camping.ViewModels.ListServisesViewModel
+@using (Html.BeginForm("ServicePage", "Service", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.EditorFor(model => model.Search.Name, new { htmlAttributes = new { @autocomplete = "off", @placeholder = Resource.NameService, @class = "form-control" } })
+
+    <div class="h-class">
+        <h5>@Resource.Rating</h5>
+        <div>
+            @Html.RadioButtonFor(model => model.Search.Rating, new {rating = "1"})
+            @Html.Label("1","1")
+            @Html.RadioButtonFor(model => model.Search.Rating, new {rating = "2"})
+            @Html.Label("2", "2")
+        </div>
+    </div>
+
+    <input type="submit" value=@Resource.Search class="comment-btn" />
+}

@@ -48,16 +48,18 @@
                         <li>
                             @if (HttpContext.Current.User.Identity.IsAuthenticated)
                             {
-                                @Html.ActionLink(Resource.MyOrders, "UserOrders", "Profile", new { id = Session["UserId"] }, null)
+                                @Html.ActionLink(Resource.MyOrders, "UserOrders", "Profile", new {id = Session["UserId"]}, null)
                             }
                         </li>
                         <li>
                             @Html.ActionLink(@Resource.Houses, "ListServises", "Service", new {type = "House"}, null)
                         </li>
                         <li>
-                            @Html.ActionLink(@Resource.Parking, "ListServises", "Service", new { type = "Parking" }, null)
+                            @Html.ActionLink(@Resource.Parking, "ListServises", "Service", new {type = "Parking"}, null)
                         </li>
-                        
+                        <li>
+                            @Html.ActionLink(@Resource.OtherServices, "ListServises", "Service", new { type = "OtherServices" }, null)
+                        </li>                       
                     </ul>
                     <div class="clearfix"> </div>
                     <!-- script-for-menu -->
