@@ -162,13 +162,44 @@ namespace Camping.Controllers
         {
             try
             {
-
+                var pic = new AddPhotos();
+                var pathPic = pic.AddImage(upload, Server.MapPath("/images/Services/"), "/images/Services/");
+                var entity = Mapper.Map<AddServiceViewModel, Services>(model);
+                entity.servicePhoto = new List<ServicePhoto>()
+                {
+                    new ServicePhoto
+                    {
+                        photo = new Photo
+                        {
+                            name = pathPic,
+                            date = DateTime.Now
+                        }
+                    }
+                };
+                _servicesManager.Add(entity);
 
                 return RedirectToRoute("UserPage");
             }
             catch (Exception)
             {
                 return View();
+            }
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult NewRating(ServicePageViewModel model)
+        {
+            try
+            {
+                var service = _servicesManager.GetById(model.Id);
+                service.rating = (short) ((service.rating + model.NewRating)/2);
+                _servicesManager.Update(service);
+                return RedirectToRoute("ServicePage", new { id = model.Id });
+            }
+            catch (Exception)
+            {
+                return RedirectToRoute("ServicePage", new { id = model.Id });
             }
         }
 

@@ -11,7 +11,7 @@ namespace Camping.ViewModels
         public int ClientMax { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
-        public string Prepaymant { get; set; }
+        public decimal Prepaymant { get; set; }
         public string Photo { get; set; }
     }
 }

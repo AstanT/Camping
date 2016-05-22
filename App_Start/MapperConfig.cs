@@ -116,6 +116,18 @@ namespace Camping.App_Start
                 m.totalPrice = p.NewOrder.ClientsAmount*p.Price;
                 m.isActive = true;
             });
+
+            Mapper.CreateMap<AddServiceViewModel, Services>().AfterMap((p, m) =>
+            {
+                m.type = p.Type;
+                m.name = p.Name;
+                m.rating = 4;
+                m.clientMax = p.ClientMax;
+                m.price = p.Price;
+                m.description = p.Description;
+                m.prepaymant = p.Prepaymant;
+                m.isActive = true;
+            });
         }
     }
 }

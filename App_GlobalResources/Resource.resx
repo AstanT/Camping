@@ -144,6 +144,9 @@
   <data name="Comments" xml:space="preserve">
     <value>Comments</value>
   </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Congratulations, You have registered successfully</value>
+  </data>
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Confirm Password</value>
   </data>
@@ -177,14 +180,29 @@
   <data name="EmailNotRegistered" xml:space="preserve">
     <value>This Email is not registered</value>
   </data>
+  <data name="EndRegistration" xml:space="preserve">
+    <value>End of registration</value>
+  </data>
+  <data name="Estimate" xml:space="preserve">
+    <value>Estimate</value>
+  </data>
   <data name="FieldCannotBeEmpty" xml:space="preserve">
     <value>Field Cannot Be Empty</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First Name</value>
   </data>
   <data name="ForgotPassword" xml:space="preserve">
     <value>Forgot your password?</value>
   </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
   <data name="Houses" xml:space="preserve">
     <value>Houses</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last Name</value>
   </data>
   <data name="LastOrders" xml:space="preserve">
     <value>LastOrders</value>
@@ -197,6 +215,12 @@
   </data>
   <data name="LogOff" xml:space="preserve">
     <value>LogOff</value>
+  </data>
+  <data name="Massage" xml:space="preserve">
+    <value>On your e-mail arrived message. Click on the link in the message.</value>
+  </data>
+  <data name="MassagePass" xml:space="preserve">
+    <value>On your e-mail arrived message with a new password.</value>
   </data>
   <data name="MyOrders" xml:space="preserve">
     <value>My Orders</value>
@@ -231,6 +255,9 @@
   <data name="PasswordLenght" xml:space="preserve">
     <value>The password is at least 6 and no more than 20 characters</value>
   </data>
+  <data name="PasswordSuccessfullyRecovered" xml:space="preserve">
+    <value>Password successfully recovered</value>
+  </data>
   <data name="Phone" xml:space="preserve">
     <value>Phone</value>
   </data>
@@ -248,6 +275,9 @@
   </data>
   <data name="Recovery" xml:space="preserve">
     <value>Password recovery</value>
+  </data>
+  <data name="RegCompleted" xml:space="preserve">
+    <value>Registration is completed</value>
   </data>
   <data name="Registration" xml:space="preserve">
     <value>Registration</value>

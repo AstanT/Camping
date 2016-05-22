@@ -142,6 +142,15 @@ namespace Camping.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Congratulations, You have registered successfully.
+        /// </summary>
+        public static string Confirm {
+            get {
+                return ResourceManager.GetString("Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm Password.
         /// </summary>
         public static string ConfirmPassword {
@@ -241,11 +250,38 @@ namespace Camping.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to End of registration.
+        /// </summary>
+        public static string EndRegistration {
+            get {
+                return ResourceManager.GetString("EndRegistration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Estimate.
+        /// </summary>
+        public static string Estimate {
+            get {
+                return ResourceManager.GetString("Estimate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Field Cannot Be Empty.
         /// </summary>
         public static string FieldCannotBeEmpty {
             get {
                 return ResourceManager.GetString("FieldCannotBeEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First Name.
+        /// </summary>
+        public static string FirstName {
+            get {
+                return ResourceManager.GetString("FirstName", resourceCulture);
             }
         }
         
@@ -259,11 +295,29 @@ namespace Camping.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Houses.
         /// </summary>
         public static string Houses {
             get {
                 return ResourceManager.GetString("Houses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Name.
+        /// </summary>
+        public static string LastName {
+            get {
+                return ResourceManager.GetString("LastName", resourceCulture);
             }
         }
         
@@ -300,6 +354,24 @@ namespace Camping.App_GlobalResources {
         public static string LogOff {
             get {
                 return ResourceManager.GetString("LogOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On your e-mail arrived message. Click on the link in the message..
+        /// </summary>
+        public static string Massage {
+            get {
+                return ResourceManager.GetString("Massage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On your e-mail arrived message with a new password..
+        /// </summary>
+        public static string MassagePass {
+            get {
+                return ResourceManager.GetString("MassagePass", resourceCulture);
             }
         }
         
@@ -403,6 +475,15 @@ namespace Camping.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Password successfully recovered.
+        /// </summary>
+        public static string PasswordSuccessfullyRecovered {
+            get {
+                return ResourceManager.GetString("PasswordSuccessfullyRecovered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Phone.
         /// </summary>
         public static string Phone {
@@ -453,6 +534,15 @@ namespace Camping.App_GlobalResources {
         public static string Recovery {
             get {
                 return ResourceManager.GetString("Recovery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registration is completed.
+        /// </summary>
+        public static string RegCompleted {
+            get {
+                return ResourceManager.GetString("RegCompleted", resourceCulture);
             }
         }
         

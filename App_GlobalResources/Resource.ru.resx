@@ -144,6 +144,9 @@
   <data name="Comments" xml:space="preserve">
     <value>Комментарии</value>
   </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Поздравляем, Вы успешно зарегистрировались</value>
+  </data>
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Подтвердите пароль</value>
   </data>
@@ -177,14 +180,29 @@
   <data name="EmailNotRegistered" xml:space="preserve">
     <value>Этот электронный адрес не зарегистрирован</value>
   </data>
+  <data name="EndRegistration" xml:space="preserve">
+    <value>Завершение регистрации</value>
+  </data>
+  <data name="Estimate" xml:space="preserve">
+    <value>Оценить</value>
+  </data>
   <data name="FieldCannotBeEmpty" xml:space="preserve">
     <value>Поле не должно быть пустым</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Имя</value>
   </data>
   <data name="ForgotPassword" xml:space="preserve">
     <value>Забыли пароль?</value>
   </data>
+  <data name="Home" xml:space="preserve">
+    <value>Домой</value>
+  </data>
   <data name="Houses" xml:space="preserve">
     <value>Дома</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Фамилия</value>
   </data>
   <data name="LastOrders" xml:space="preserve">
     <value>Последние заказы</value>
@@ -197,6 +215,12 @@
   </data>
   <data name="LogOff" xml:space="preserve">
     <value>Выйти</value>
+  </data>
+  <data name="Massage" xml:space="preserve">
+    <value>На Вашу почту отправленно сообщение. Перейдите по ссылке, указаной в нём.</value>
+  </data>
+  <data name="MassagePass" xml:space="preserve">
+    <value>На вашу почту отправлено сообщение с новым паролем.</value>
   </data>
   <data name="MyOrders" xml:space="preserve">
     <value>Мои заказы</value>
@@ -231,6 +255,9 @@
   <data name="PasswordLenght" xml:space="preserve">
     <value>The password is at least 6 and no more than 20 characters</value>
   </data>
+  <data name="PasswordSuccessfullyRecovered" xml:space="preserve">
+    <value>Пароль успешно востановлен</value>
+  </data>
   <data name="Phone" xml:space="preserve">
     <value>Телефон</value>
   </data>
@@ -248,6 +275,9 @@
   </data>
   <data name="Recovery" xml:space="preserve">
     <value>Востановление пароля</value>
+  </data>
+  <data name="RegCompleted" xml:space="preserve">
+    <value>Регистрация завершена</value>
   </data>
   <data name="Registration" xml:space="preserve">
     <value>Регистрация</value>

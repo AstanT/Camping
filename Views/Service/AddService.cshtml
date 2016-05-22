@@ -10,44 +10,53 @@
         <div class="container">
             <div class="faqs-top-grids">
                 <div class="book-grids">
-                    <div class="col-md-6 book-left">
-                        <div class="book-left-info">
-                        </div>
+                    <div class="col-md-3 book-left">
+                        
+                    </div>
+                    <div class="col-md-6 book-right book-left">
+                        
                         <div class="book-left-form">
-                            @using (Html.BeginForm("AddService", "Service", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            @using (Html.BeginForm("AddService", "Service", null, FormMethod.Post, new {enctype = "multipart/form-data"}))
                             {
                                 @Html.AntiForgeryToken()
                                 <div>
-                                    <h5> @Html.RadioButtonFor(model => model.Type, "House", new { Checked = "checked" }) @Resource.Houses</h5>
-                                    <h5> @Html.RadioButtonFor(model => model.Type, "Parking", null) @Resource.Parking</h5>
-                                    <h5> @Html.RadioButtonFor(model => model.Type, "OtherServices", null) @Resource.OtherServices</h5>
-                                </div>                                
+                                    <div class="col-md-2">
+                                        @Html.RadioButtonFor(model => model.Type, "House", new {Checked = "checked"}) @Resource.Houses
+                                    </div>
+                                    <div class="col-md-2">
+                                        @Html.RadioButtonFor(model => model.Type, "Parking", null) @Resource.Parking
+                                    </div>
+                                    <div class="col-md-2">
+                                        @Html.RadioButtonFor(model => model.Type, "OtherServices", null) @Resource.OtherServices
+                                    </div>                                                                                
+                                </div>
+                                <br/><br /><br />
+                                @Html.EditorFor(model => model.Name, new {htmlAttributes = new { @autocomplete = "off", @placeholder = Resource.NameService, @class = "form-control"}})
+                                <p>@Html.ValidationMessageFor(model => model.Name, "", new {@class = "text-danger"})</p>
 
-                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @placeholder = Resource.NameService, @class = "form-control" } })
-                                <p>@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })</p>
-
-                                @Html.EditorFor(model => model.ClientMax, new { htmlAttributes = new { @placeholder = Resource.ClientMax, @class = "form-control" } })
+                                @Html.EditorFor(model => model.ClientMax, new {htmlAttributes = new { @autocomplete = "off", @placeholder = Resource.ClientMax, @class = "form-control"}})
                                 <p>@Html.ValidationMessageFor(model => model.ClientMax, "", new {@class = "text-danger"})</p>
 
-                                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @placeholder = Resource.Price, @class = "form-control" } })
+                                <br/>
+                                @Html.EditorFor(model => model.Price, new {htmlAttributes = new { @autocomplete = "off", @placeholder = Resource.Price, @class = "form-control"}})
                                 <p>@Html.ValidationMessageFor(model => model.Price, "", new {@class = "text-danger"})</p>
 
-                                @Html.EditorFor(model => model.Prepaymant, new { htmlAttributes = new { @placeholder = Resource.Prepaymant, @class = "form-control" } })
+                                @Html.EditorFor(model => model.Prepaymant, new {htmlAttributes = new { @autocomplete = "off", @placeholder = Resource.Prepaymant, @class = "form-control"}})
                                 <p>@Html.ValidationMessageFor(model => model.Prepaymant, "", new {@class = "text-danger"})</p>
 
-                                @Html.TextAreaFor(model => model.Description, new { @placeholder = Resource.Description, @rows = "3"})
+                                @Html.TextAreaFor(model => model.Description, new { @autocomplete = "off", @placeholder = Resource.Description, @rows = "3" })
                                 <p>@Html.ValidationMessageFor(model => model.Description, "", new {@class = "text-danger"})</p>
 
                                 <p>@Resource.Photo</p>
-                                <input type="file" id="Photo" name="upload" lang="en-US" />
-                                <p>@Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })</p>
+                                <input type="file" id="Photo" name="upload" lang="en-US"/>
+                                <p>@Html.ValidationMessageFor(model => model.Photo, "", new {@class = "text-danger"})</p>
 
-                                <input type="submit" id="login" value="@Resource.LogIn">
+                                <input type="submit" id="login" value="@Resource.Add">
                             }
-                        </div>                        
+                        </div>
                     </div>
-                    <div class="col-md-6 book-left book-right">
-                        
+                    <div class="col-md-3 book-right">
+
                     </div>
                     <div class="clearfix"> </div>
                 </div>

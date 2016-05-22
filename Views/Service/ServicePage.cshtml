@@ -34,7 +34,7 @@
                         @if (HttpContext.Current.User.Identity.IsAuthenticated && userInSystem == 1)
                         {
                             <div class="opinion">
-                                <br/><h3>@Resource.AddComment</h3>
+                                <br/><h3>@Resource.AddPhoto</h3>
                                 @using (Html.BeginForm("AddPhotoService", "Service", null, FormMethod.Post, new {enctype = "multipart/form-data"}))
                                 {
                                     @Html.AntiForgeryToken()
@@ -54,7 +54,7 @@
                                     @Html.AntiForgeryToken()
                                     @Html.HiddenFor(model => Model.Id)
                                     @Html.HiddenFor(model => Model.IdUserInSystem)
-                                    @Html.TextAreaFor(model => model.NewComment, new {@placeholder = Resource.Comment, @rows = "3"})
+                                    @Html.TextAreaFor(model => model.NewComment, new { @autocomplete = "off", @placeholder = Resource.Comment, @rows = "3"})
                                     <input type="submit" value= @Resource.Add>
                                 }
                             </div>
@@ -112,6 +112,24 @@
                             <p>@Model.Prepaymant</p>
                             <div class="clearfix"></div>
                         </div>
+                    </div>
+
+                    <div class="other-comments">
+                        @using (Html.BeginForm("NewRating", "Service", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.HiddenFor(model => Model.Id)
+                            <div class="h-class">
+                                <br /><h5> @Html.RadioButtonFor(model => model.NewRating, "1", null) @Resource.Rating : 1</h5>
+                                <h5> @Html.RadioButtonFor(model => model.NewRating, "2", null) @Resource.Rating : 2</h5>
+                                <h5> @Html.RadioButtonFor(model => model.NewRating, "3", null) @Resource.Rating : 3</h5>
+                                <h5> @Html.RadioButtonFor(model => model.NewRating, "4", null) @Resource.Rating : 4</h5>
+                                <h5> @Html.RadioButtonFor(model => model.NewRating, "5", null) @Resource.Rating : 5</h5>
+                                <br /><br /><input type="submit" value=@Resource.Estimate>
+                            </div>
+                        }
+
+                        
                     </div>
                 </div>
                 <div class="clearfix"></div>
