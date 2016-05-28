@@ -17,14 +17,17 @@ namespace Camping.Controllers
     {
         private readonly IServicesManager<Services> _servicesManager;
         private readonly IServicePhotoManager<ServicePhoto> _servicePhotoManager;
-        private readonly ICommentManager<Comments> _commentManager; 
+        private readonly ICommentManager<Comments> _commentManager;
+        private readonly IOrderManager<Order> _orderManager;
 
         public ServiceController(IServicesManager<Services> servicesManager,
-            IServicePhotoManager<ServicePhoto> servicePhotoManager, ICommentManager<Comments> commentManager)
+            IServicePhotoManager<ServicePhoto> servicePhotoManager, ICommentManager<Comments> commentManager,
+            IOrderManager<Order> orderManager)
         {
             _servicesManager = servicesManager;
             _servicePhotoManager = servicePhotoManager;
             _commentManager = commentManager;
+            _orderManager = orderManager;
         }
 
         [AllowAnonymous]
@@ -201,6 +204,48 @@ namespace Camping.Controllers
             {
                 return RedirectToRoute("ServicePage", new { id = model.Id });
             }
+        }
+
+        [AllowAnonymous]
+        public ActionResult DeleteService(long id)
+        {
+            var listComments = new List<Comments>();
+            var listOrders = new List<Order>();
+            var listPhotos = new List<ServicePhoto>();
+
+            var comments = _commentManager.GetCommentsByServiceId(id);
+            var orders = _orderManager.GetOrdersByServiceId(id);
+            var photos = _servicePhotoManager.GetServicePhotosByServiceId(id);
+
+            foreach (var comment in comments)
+            {
+                listComments.Add(comment);
+            }
+            foreach (var order in orders)
+            {
+                listOrders.Add(order);
+            }
+            foreach (var photo in photos)
+            {
+                listPhotos.Add(photo);
+            }
+
+            foreach (var coment in listComments)
+            {
+                _commentManager.Delete(coment);
+            }
+            foreach (var order in listOrders)
+            {
+                _orderManager.Delete(order);
+            }
+            foreach (var photo in listPhotos)
+            {
+                _servicePhotoManager.Delete(photo);
+            }
+
+            var service = _servicesManager.GetById(id);
+            _servicesManager.Delete(service);
+            return RedirectToRoute("UserPage", new { id = 1 });
         }
 
     }

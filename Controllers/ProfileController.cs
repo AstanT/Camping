@@ -178,7 +178,7 @@ namespace Camping.Controllers
         {
             var order = _orderManager.GetById(id);
             _orderManager.Delete(order);
-            return RedirectToRoute("ServicePage");
+            return RedirectToRoute("UserOrders");
         }
 
     }

@@ -36,7 +36,11 @@ namespace Camping
                 url: "Profile/UserPage/{id}",
                 defaults: new {controller = "Profile", action = "UserPage", id = UrlParameter.Optional}
                 );
-
+            routes.MapRoute(
+                name: "UserOrders",
+                url: "Profile/UserOrders/{id}",
+                defaults: new { controller = "Profile", action = "UserOrders", id = UrlParameter.Optional }
+                );
             
             routes.MapRoute(
                 name: "Default",

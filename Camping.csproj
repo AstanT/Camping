@@ -225,10 +225,14 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\11.jpg" />
+    <Content Include="images\12.jpg" />
+    <Content Include="images\13.jpg" />
     <Content Include="images\Account\account.jpg" />
     <Content Include="images\arrow-s.png" />
     <Content Include="images\arrow.png" />
     <Content Include="images\b-arrow.png" />
+    <Content Include="images\banner.jpg" />
     <Content Include="images\cal.png" />
     <Content Include="images\dot.png" />
     <Content Include="images\icon.png" />
